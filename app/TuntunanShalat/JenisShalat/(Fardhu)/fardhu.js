@@ -4,47 +4,84 @@ import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "re
 import { Link } from 'expo-router';
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import Back from "../../../../assets/icons/back"
+import { useState, useEffect } from "react";
+// import Card_data from "../components/card_data";
 // import Burger from "../../../../assets/icons/burger";
 
-const tuntunanShalat = () => {
+const shalatData = require('../../../../assets/shalat/fardhu.json');
+
+const fardhu = () => {
+    const [data, setData] = useState([]);
+    const fetchData = () => {
+        // Simulate fetching data from shalat.js
+        setData(shalatData);
+      };
+    useEffect(() => {
+        // Fetch data when the component mounts
+        fetchData();
+      }, []);
+
     return (
         <>
+            <Stack.Screen options={{
+                headerTitle: "",
+                headerTransparent: true,
+                headerTintColor:'white'
+            }}/>
             <SafeAreaView style={styles.container}>
                 <ImageBackground
                     source={require('../../../../assets/images/bg_opening.png')}
                     style={styles.bg_opening}
                     >
                 </ImageBackground>
-                <View style={styles.header}>
+                {/* <View style={styles.header}>
                     <Back />
-            
+        
                     
-                </View>
+                </View> */}
                 <ScrollView>
     
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop:'20%', }}>
              
-
-                        <View style={styles.header}>
-                            {/* <Link href="/TuntunanShalat/JenisShalat/jenisShalat" style={{ color: 'white', fontSize: 40 }}>{'<'}</Link> */}
-                        </View>
                         <Text style={styles.text_atas}>Shalat Fardhu</Text>
 
                         <Image source={require('../../../../assets/images/shalatyuk.png')} />
-                        <View style={styles.card_main}>
+                        
                                 
                             <View style={styles.cardWrapper}>
-
+                            {data.map((item) => (
+                                <TouchableOpacity style={styles.kartu} key={item.id}>
+                                    <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
+                                    
+                                </TouchableOpacity>
+                                ))}
                             </View>
                             
-                        </View>
+                        
                     </View>
                 </ScrollView>
             </SafeAreaView>
         </>
     )
+
 }
 const styles = StyleSheet.create({
+
+    // card title
+    kartu:{
+        flex:1,
+        alignItems: 'flex-start', justifyContent: 'flex-start',
+        flexDirection:'row',
+        padding:20,
+        backgroundColor: "#6345D4",
+        paddingEnd: 20,
+        borderRadius: 10
+    },
+    kartu_id:{
+        color: "#fff"
+    },
+  
+
     container: { flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 0, top: 0, paddingTop: 0, width:'100%' },
     bg_opening: {
         position: 'absolute',
@@ -52,7 +89,9 @@ const styles = StyleSheet.create({
         width: '120%',
         top: -400
     },
-    text: { textAlign: 'center', fontFamily: 'Poppins_800ExtraBold', color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
+    text: { textAlign: 'center',
+    //  fontFamily: 'Poppins_800ExtraBold',
+      color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
     text_atas: {
         fontSize: 40,
         marginBottom: 10,
@@ -81,7 +120,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'black',
         fontSize: 20,
-        fontFamily: 'Poppins_400Regular',
+        // fontFamily: 'Poppins_400Regular',
         color: 'white'
     },
     text_subtitle: {
@@ -124,11 +163,14 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     cardWrapper: {
-        backgroundColor:'purple',
-        width:'100%'
+        backgroundColor:'rgba(47, 77, 173, 0.29)',
+        borderRadius: 10,
+        width:'100%',
+        padding: 10,
+        gap: 5
     }
 
 })
 
 
-export default tuntunanShalat;
+export default fardhu;

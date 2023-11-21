@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
         width: '120%',
         top: -400
     },
-    text: { textAlign: 'center', fontFamily: 'Poppins_800ExtraBold', color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
+    text: { textAlign: 'center',
+    //  fontFamily: 'Poppins_800ExtraBold', 
+     color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
     text_atas: {
         fontSize: 40,
         marginBottom: 10,
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'black',
         fontSize: 20,
-        fontFamily: 'Poppins_400Regular',
+        // fontFamily: 'Poppins_400Regular',
         color: 'white'
     },
     text_subtitle: {

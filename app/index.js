@@ -1,28 +1,24 @@
 import React from "react"
 import { useEffect } from "react"
+import { useNavigation } from "expo-router";
 import { Text, Image, ImageBackground, View, StyleSheet } from "react-native"
 // import { useFonts, Poppins_800ExtraBold, Poppins_400Regular } from "../assets/fonts/index"
-import { TouchableOpacity } from "react-native"
-import { useNavigation } from '@react-navigation/native';
+// import { TouchableOpacity } from "react-native"
+// import { useNavigation } from '@react-navigation/native';
 import { Link } from 'expo-router';
 import AppLoading from 'expo-app-loading';
 import { SafeAreaView } from "react-native";
-import * as Font from 'expo-font';
+
 
 const Home = () => {
-    useEffect(() => {
-        const loadFonts = async () => {
-          await Font.loadAsync({
-            'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
-            'poppins-bold': require('../assets/fonts/Poppins-Bold.ttf'),
-          });
-        };
     
-        loadFonts();
-      }, []);
+    const navigator = useNavigation();
+    useEffect(()=>{
+        navigator.setOptions({headerShown: false});
+    },[navigator])
     return (
         <>
-            <SafeAreaView style={styles.container}>
+            <SafeAreaView style={styles.container}> 
                 <ImageBackground 
                 source={require('../assets/images/bg_opening.png') }
                 style={styles.bg_opening}
@@ -36,9 +32,7 @@ const Home = () => {
                 <Text style={[styles.text_bawah, styles.text]}>APP</Text>
                 
                 </View> 
-                <Link style={styles.button}
-                    href="/TuntunanShalat/tuntunanShalat"
-                >
+                <Link style={styles.button} href="/TuntunanShalat/">
                     <Text style={styles.buttonText}>Get Started</Text>
                 </Link>
                 <Text></Text>
@@ -58,7 +52,9 @@ const styles = StyleSheet.create({
         width: '100%',
         top:-200    
     },
-    text: {textAlign:'center',fontFamily:'poppins-bold', color:'white',textShadowColor:'black', textShadowOffset:{width:5,height:2}, textShadowRadius:10},
+    text: {textAlign:'center',
+    fontFamily:'poppins_bold', 
+    color:'white',textShadowColor:'black', textShadowOffset:{width:5,height:2}, textShadowRadius:10},
     text_atas : { fontSize:40, marginBottom:0, paddingBottom:0, lineHeight:50},
     text_bawah : { fontSize:70, marginTop:0 , paddingTop:0, lineHeight:80},
     img_opening: {marginTop:50},
@@ -79,7 +75,7 @@ const styles = StyleSheet.create({
     buttonText : {
         color:'black',
         fontSize:20,
-        fontFamily:'poppins-regular',
+        fontFamily:'poppins_regular',
         color: 'white'
     },
     text_subtitle : {

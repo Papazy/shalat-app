@@ -1,33 +1,82 @@
 import React from "react";
-import { Stack, useRouter } from 'expo-router'
+import { Stack, useRouter, useNavigation } from 'expo-router'
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
 import { Link } from 'expo-router';
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native";
+import { useEffect, useState } from "react";
 
+const rukunData = require('../../../assets/shalat/rukun.json')
 
 const rukunShalat = () => {
+    const navigation = useNavigation();
+    // useEffect(()=>{
+    //     navigation.setOptions({headerShown: false})
+    // },[navigation])
+
+    const [data,setData] = useState([]);
+
+    const fetchData = () => {
+        // Simulate fetching data from shalat.js
+        setData(rukunData);
+      };
+    useEffect(()=>{
+        fetchData()
+    },[]);
+
+    
+
     return (
         <>
-            <SafeAreaView style={styles.container}>
+                <SafeAreaView style={styles.container}>
+            <Stack.Screen options={{
+                headerTransparent: true,
+                headerTitle: "",
+                headerTintColor: '#fff'
+            }}/>
                 <ImageBackground
                     source={require('../../../assets/images/bg_opening.png')}
                     style={styles.bg_opening}
                 >
                 </ImageBackground>
-               <Text>Coming Soon</Text>
+                <ScrollView style={{height:'100%', width:'100%', padding:20 }}>
+                    <Text>Rukun Shalat</Text>
+                    {data.map((item) => (
+                        <TouchableOpacity onPress={()=>{navigation.navigate("[id]", {id: item.id})}} style={styles.kartu} key={item.id}>
+                            <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
+                        </TouchableOpacity>
+                        ))}
+                </ScrollView>
             </SafeAreaView>
         </>
     )
 }
 const styles = StyleSheet.create({
-    container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+    kartu:{
+        flex:1,
+        alignItems: 'flex-start', justifyContent: 'flex-start',
+        flexDirection:'row',
+        padding:20,
+        backgroundColor: "#6345D4",
+        paddingEnd: 20,
+        borderRadius: 10,
+        marginBottom:10,
+        marginTop:5,
+        // marginEnd:20,
+        // marginStart:20,
+    },
+    kartu_id:{
+        color: "#fff"
+    },
+    container: { flex: 1, alignItems: 'center', justifyContent: 'center', marginTop:60 },
     bg_opening: {
         position: 'absolute',
         height: '120%',
         width: '120%',
         top: -400
     },
-    text: { textAlign: 'center', fontFamily: 'Poppins_800ExtraBold', color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
+    text: { textAlign: 'center',
+    //  fontFamily: 'Poppins_800ExtraBold',
+      color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
     text_atas: {
         fontSize: 40,
         marginBottom: 10,
@@ -56,7 +105,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'black',
         fontSize: 20,
-        fontFamily: 'Poppins_400Regular',
+        // fontFamily: 'Poppins_400Regular',
         color: 'white'
     },
     text_subtitle: {

@@ -1,0 +1,22 @@
+[
+    {
+        "id" :1,
+        "nama":"Subuh"
+    },
+    {
+        "id" :2,
+        "nama":"Dzuhur"
+    },
+    {
+        "id" :3,
+        "nama":"Ashar"
+    },
+    {
+        "id" :4,
+        "nama":"Magrib"
+    },
+    {
+        "id" :5,
+        "nama":"Isya"
+    }
+]

@@ -1,32 +1,49 @@
 import React from "react";
-import { Stack, useRouter } from 'expo-router'
+import { Stack, useRouter, useNavigation } from 'expo-router'
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
 import { Link } from 'expo-router';
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 
 
-const tuntunanShalat = () => {
+
+const jenisShalat = () => {
+    const navigation = useNavigation();
+    const handleButtonPress = () => {
+        // Navigasi ke halaman 'Other'
+        navigation.navigate('(Fardhu)/fardhu');
+      };
+    const handleButtonPress2 = () => {
+        // Navigasi ke halaman 'Other'
+        navigation.navigate('(Sunnah)/sunnah');
+      };
     return (
         <>
+            <Stack.Screen
+                options={{
+                    headerTitle:"",
+                    headerTransparent: true,
+                    headerStyle:{
+                        color:'white'
+                    },
+                    headerTintColor:'white'
+                }}
+            />
             <SafeAreaView style={styles.container}>
                 <ImageBackground
                     source={require('../../../assets/images/bg_opening.png')}
                     style={styles.bg_opening}
                 >
                 </ImageBackground>
-                <View style={styles.header}>
-                    <Link href="/TuntunanShalat/tuntunanShalat" style={{color: 'white', fontSize:40}}>{'<'}</Link>
-                </View>
                 <View style={styles.card_main}>
                     <Text style={styles.text_atas}>Jenis Shalat</Text>
                 
                     <Image source={require('../../../assets/images/shalatyuk.png')} />
                     <View style={{flexDirection: 'row', marginTop: 20}}>
-                        <TouchableOpacity href="/TuntunanShalat/JenisShalat/Fardhu/fardhu" style={[styles.card, { marginRight: 20 }]} >
+                        <TouchableOpacity onPress={ handleButtonPress} style={[styles.card, { marginRight: 20 }]} >
                                 <Image source={require('../../../assets/images/jenisShalat.png')} />
-                                <Link href="/TuntunanShalat/JenisShalat/Fardhu/fardhu" style= {styles.card_title}>Fardhu</Link>
+                                <Text style= {styles.card_title}>Fardhu</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity href="/TuntunanShalat/JenisShalat/Sunnah/sunnah" style={[styles.card]} >
+                        <TouchableOpacity onPress={ handleButtonPress2} style={[styles.card]} >
                                 <Image source={require('../../../assets/images/jenisShalat.png')} />
                                 <Text style= {styles.card_title}>Sunnah</Text>
                         </TouchableOpacity>
@@ -44,7 +61,9 @@ const styles = StyleSheet.create({
         width: '120%',
         top: -400
     },
-    text: { textAlign: 'center', fontFamily: 'Poppins_800ExtraBold', color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
+    text: { textAlign: 'center',
+    //  fontFamily: 'Poppins_800ExtraBold', 
+     color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
     text_atas: {
         fontSize: 40,
         marginBottom: 10,
@@ -73,7 +92,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'black',
         fontSize: 20,
-        fontFamily: 'Poppins_400Regular',
+        // fontFamily: 'Poppins_400Regular',
         color: 'white'
     },
     text_subtitle: {
@@ -138,4 +157,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default tuntunanShalat;
+export default jenisShalat;
