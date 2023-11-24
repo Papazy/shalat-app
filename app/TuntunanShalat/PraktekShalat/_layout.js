@@ -8,7 +8,7 @@ export default function Layout(){
     },[navigation])
     return(
         <Stack>
-            <Stack.Screen name="rukunShalat" />
+            <Stack.Screen name="praktekShalat" />
             <Stack.Screen name="[id]" />
         </Stack>
     )

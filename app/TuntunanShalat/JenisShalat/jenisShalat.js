@@ -1,7 +1,6 @@
-import React from "react";
+
 import { Stack, useRouter, useNavigation } from 'expo-router'
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
-import { Link } from 'expo-router';
 import { TouchableOpacity } from "react-native";
 
 

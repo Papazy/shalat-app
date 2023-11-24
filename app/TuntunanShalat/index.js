@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
-import List from '../../assets/icons/burger'
 import Bell from '../../assets/icons/bell'
 import Burger from "../../assets/icons/burger";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import { Link, useNavigation, Stack } from 'expo-router';
 import { useEffect } from "react";
 
@@ -50,10 +49,6 @@ const index = () => {
                     style={styles.bg_opening}
                 >
                 </ImageBackground>
-                {/* <View style={styles.header}>
-                    <Burger />
-                    <Bell />
-                </View> */}
                 <View style={[styles.body, styles.container]}>
 
                     <Text style={styles.text_atas}>Tuntunan Shalat</Text>
@@ -61,15 +56,15 @@ const index = () => {
                     <View style={[styles.container, styles.row]}>
                         <TouchableOpacity onPress={()=>{navigation.navigate("RukunShalat")}} style={[styles.card,{ marginRight: 10 } ]}>
                             <Image source={require('../../assets/images/mengaji.png')} />
-                            <Link href="/TuntunanShalat/RukunShalat/rukunShalat" style= {styles.card_title}>Rukun</Link>
+                            <Text style= {styles.card_title}>Rukun</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={()=>{navigation.navigate("JenisShalat")}} style={[styles.card, { marginRight: 10 }]} >
                             <Image source={require('../../assets/images/sajadah.png')} />
-                            <Link href="/TuntunanShalat/JenisShalat/jenisShalat" style= {styles.card_title}>Jenis</Link>
+                            <Text style= {styles.card_title}>Jenis</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity href="" style={[styles.card]}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate("PraktekShalat")}} style={[styles.card]}>
                             <Image source={require('../../assets/images/orangshalat.png')} />
-                            <Link href="/TuntunanShalat/PraktekShalat/praktekShalat" style= {styles.card_title}>Praktek</Link>
+                            <Text style= {styles.card_title}>Praktek</Text>
                         </TouchableOpacity>
                     </View>
                     <Image source={require('../../assets/images/takbir.png')} />

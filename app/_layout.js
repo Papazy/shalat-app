@@ -1,9 +1,7 @@
 import { Stack, useNavigation } from 'expo-router'
 import { useEffect } from 'react';
-import * as Font from 'expo-font';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen'
-import { useCallback } from 'react'
 SplashScreen.preventAutoHideAsync();
 
 

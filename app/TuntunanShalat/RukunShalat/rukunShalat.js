@@ -9,14 +9,10 @@ const rukunData = require('../../../assets/shalat/rukun.json')
 
 const rukunShalat = () => {
     const navigation = useNavigation();
-    // useEffect(()=>{
-    //     navigation.setOptions({headerShown: false})
-    // },[navigation])
 
     const [data,setData] = useState([]);
 
     const fetchData = () => {
-        // Simulate fetching data from shalat.js
         setData(rukunData);
       };
     useEffect(()=>{
@@ -39,7 +35,7 @@ const rukunShalat = () => {
                 >
                 </ImageBackground>
                 <ScrollView style={{height:'100%', width:'100%', padding:20 }}>
-                    <Text>Rukun Shalat</Text>
+                    <Text style={styles.title}>Rukun Shalat</Text>
                     {data.map((item) => (
                         <TouchableOpacity onPress={()=>{navigation.navigate("[id]", {id: item.id})}} style={styles.kartu} key={item.id}>
                             <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
@@ -166,6 +162,13 @@ const styles = StyleSheet.create({
         fontSize:20,
         marginTop:15,
         fontWeight: '700'
+    },
+    title: {
+        fontSize: 30,
+        fontWeight: '700',
+        marginBottom: 20,
+        color: '#6345D4'
+    
     }
 })
 

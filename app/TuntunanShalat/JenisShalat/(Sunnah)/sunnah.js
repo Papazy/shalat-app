@@ -2,9 +2,6 @@ import React from "react";
 import { Stack, useRouter } from 'expo-router'
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
 import { Link } from 'expo-router';
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import Back from "../../../../assets/icons/back"
-// import Burger from "../../../../assets/icons/burger";
 
 const sunnah = () => {
     return (
@@ -29,7 +26,6 @@ const styles = StyleSheet.create({
         top: -400
     },
     text: { textAlign: 'center',
-    //  fontFamily: 'Poppins_800ExtraBold', 
      color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
     text_atas: {
         fontSize: 40,
@@ -59,7 +55,6 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'black',
         fontSize: 20,
-        // fontFamily: 'Poppins_400Regular',
         color: 'white'
     },
     text_subtitle: {
@@ -76,8 +71,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: "space-between",
-        // alignItems:"center",
-        // backgroundColor: 'red',
         width: '100%',
         height: '10%',
         paddingTop: 20,

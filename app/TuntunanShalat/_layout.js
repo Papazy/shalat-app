@@ -1,6 +1,5 @@
 import {Stack, useNavigation} from "expo-router"
 import { useEffect } from "react";
-import jenisShalat from "./JenisShalat/jenisShalat";
 export default function Layout(){
      const navigation = useNavigation();
     useEffect (()=> {
@@ -12,6 +11,7 @@ export default function Layout(){
             <Stack.Screen name="index"/>
             <Stack.Screen name="JenisShalat" />
             <Stack.Screen name="RukunShalat" />
+            <Stack.Screen name="PraktekShalat" />
            
         </Stack >
     )

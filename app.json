@@ -26,6 +26,11 @@
     "updates": {
       "url": "https://u.expo.dev/5cbf5757-b85b-46cf-a0fc-8dfa7ab08100"
     },
-    "ios": {}
+    "ios": {},
+    "splash": {
+      "image":"./assets/images/splash.png",
+      "backgroundColor": "#ffffff",
+      "resizeMode": "cover"
+    }
   }
 }
