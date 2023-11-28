@@ -8,9 +8,8 @@ export default function Layout(){
 
     
     return (<Stack>
-        <Stack.Screen name="jenisShalat"/>
-        <Stack.Screen name="Fardhu" options={{headerTransparent:true, headerTitle:""}}/>
-        <Stack.Screen name="Sunnah" options={{headerTransparent:true}}/>
+        <Stack.Screen name="fardhu" options={{headerTransparent:true, headerTitle:""}}/>
+       
         
     </Stack>)
 }

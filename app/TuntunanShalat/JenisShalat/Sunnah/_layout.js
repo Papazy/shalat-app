@@ -7,10 +7,10 @@ export default function Layout(){
         },[navigation]);
 
     
-    return (<Stack>
-        <Stack.Screen name="jenisShalat"/>
-        <Stack.Screen name="Fardhu" options={{headerTransparent:true, headerTitle:""}}/>
-        <Stack.Screen name="Sunnah" options={{headerTransparent:true}}/>
-        
+    return (
+    <Stack>
+    
+        <Stack.Screen name="sunnah" options={{headerTransparent:true}}/>
+        <Stack.Screen name="[id]" />
     </Stack>)
 }

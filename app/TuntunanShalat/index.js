@@ -5,7 +5,7 @@ import Burger from "../../assets/icons/burger";
 import { TouchableOpacity } from "react-native";
 import { Link, useNavigation, Stack } from 'expo-router';
 import { useEffect } from "react";
-
+import Wajengan from "../../assets/wajengan";
 // import * as Font from 'expo-font';
 // const fetchFonts = () => {
 //     return Font.loadAsync({
@@ -53,6 +53,7 @@ const index = () => {
 
                     <Text style={styles.text_atas}>Tuntunan Shalat</Text>
                     <Image source={require('../../assets/images/shalatyuk.png')} />
+                    {/* <Wajengan /> */}
                     <View style={[styles.container, styles.row]}>
                         <TouchableOpacity onPress={()=>{navigation.navigate("RukunShalat")}} style={[styles.card,{ marginRight: 10 } ]}>
                             <Image source={require('../../assets/images/mengaji.png')} />

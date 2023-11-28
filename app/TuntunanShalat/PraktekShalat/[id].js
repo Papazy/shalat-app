@@ -61,10 +61,10 @@ export default function praktek(){
 
 const styles = StyleSheet.create({
     center : {flex: 5, alignItems:'center', justifyContent:'center', width: '100%'},
-    kartu : {justifyContent:'flex-start',alignItems:'center', backgroundColor:'purple',width: '100%', paddingVertical:20},
+    kartu : {justifyContent:'flex-start',alignItems:'center', backgroundColor:'#A155B9',width: '100%', paddingVertical:20},
     title: {color: 'white'},
-    buttonWrapper:{flex:1, flexDirection: 'row', alignItems:'center', justifyContent:'center', gap:20, backgroundColor:'purple', width:'100%'},
-    button: {width:120, paddingVertical: 10, borderRadius:3, backgroundColor: 'green', elevation: 3,
+    buttonWrapper:{flex:1, flexDirection: 'row', alignItems:'center', justifyContent:'center', gap:20, backgroundColor:'#A155B9', width:'100%'},
+    button: {width:120, paddingVertical: 10, borderRadius:3, backgroundColor: '#66f542', elevation: 3,
                 shadowColor: '#fff', // Warna bayangan
                 shadowOffset: { width: 2, height: 2 }, // Pengaturan posisi bayangan
                 shadowOpacity: 0.3, // Tingkat transparansi bayangan

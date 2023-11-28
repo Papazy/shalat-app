@@ -2,22 +2,81 @@ import React from "react";
 import { Stack, useRouter } from 'expo-router'
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
 import { Link } from 'expo-router';
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { useState, useEffect } from "react";
 
-const sunnah = () => {
+const shalatData = require('../../../../assets/shalat/fardhu.json');
+
+const fardhu = () => {
+    const [data, setData] = useState([]);
+    const fetchData = () => {
+        setData(shalatData);
+      };
+    useEffect(() => {
+        fetchData();
+      }, []);
+
     return (
         <>
+            <Stack.Screen options={{
+                headerTitle: "",
+                headerTransparent: true,
+                headerTintColor:'white'
+            }}/>
             <SafeAreaView style={styles.container}>
                 <ImageBackground
                     source={require('../../../../assets/images/bg_opening.png')}
                     style={styles.bg_opening}
                     >
                 </ImageBackground>
-                <Text>Coming Soon</Text>
+                {/* <View style={styles.header}>
+                    <Back />
+        
+                    
+                </View> */}
+                <ScrollView>
+    
+                    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop:'20%', }}>
+             
+                        <Text style={styles.text_atas}>Shalat Fardhu</Text>
+
+                        <Image source={require('../../../../assets/images/shalatyuk.png')} />
+                        
+                                
+                            <View style={styles.cardWrapper}>
+                            {data.map((item) => (
+                                <TouchableOpacity style={styles.kartu} key={item.id}>
+                                    <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
+                                    
+                                </TouchableOpacity>
+                                ))}
+                            </View>
+                            
+                        
+                    </View>
+                </ScrollView>
             </SafeAreaView>
         </>
     )
+
 }
 const styles = StyleSheet.create({
+
+    // card title
+    kartu:{
+        flex:1,
+        alignItems: 'flex-start', justifyContent: 'flex-start',
+        flexDirection:'row',
+        padding:20,
+        backgroundColor: "#6345D4",
+        paddingEnd: 20,
+        borderRadius: 10
+    },
+    kartu_id:{
+        color: "#fff"
+    },
+  
+
     container: { flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 0, top: 0, paddingTop: 0, width:'100%' },
     bg_opening: {
         position: 'absolute',
@@ -26,7 +85,8 @@ const styles = StyleSheet.create({
         top: -400
     },
     text: { textAlign: 'center',
-     color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
+    //  fontFamily: 'Poppins_800ExtraBold',
+      color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
     text_atas: {
         fontSize: 40,
         marginBottom: 10,
@@ -46,7 +106,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         borderRadius: 50,
-        // marginTop: '40%',
         shadowColor: 'black',
         shadowOffset: { width: 3, height: 2 },
         shadowRadius: 5,
@@ -95,11 +154,14 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
     cardWrapper: {
-        backgroundColor:'purple',
-        width:'100%'
+        backgroundColor:'rgba(47, 77, 173, 0.29)',
+        borderRadius: 10,
+        width:'100%',
+        padding: 10,
+        gap: 5
     }
 
 })
 
 
-export default sunnah;
+export default fardhu;

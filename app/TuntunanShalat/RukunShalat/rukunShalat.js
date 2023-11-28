@@ -4,7 +4,7 @@ import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "re
 import { Link } from 'expo-router';
 import { ScrollView, TouchableOpacity } from "react-native";
 import { useEffect, useState } from "react";
-
+import Wajengan from "../../../assets/wajengan";
 const rukunData = require('../../../assets/shalat/rukun.json')
 
 const rukunShalat = () => {
@@ -25,8 +25,9 @@ const rukunShalat = () => {
         <>
                 <SafeAreaView style={styles.container}>
             <Stack.Screen options={{
-                headerTransparent: true,
-                headerTitle: "",
+                headerTransparent: false,
+                headerTitle: "Rukun Shalat",
+                headerStyle:{backgroundColor: '#924dbf'},
                 headerTintColor: '#fff'
             }}/>
                 <ImageBackground
@@ -34,13 +35,17 @@ const rukunShalat = () => {
                     style={styles.bg_opening}
                 >
                 </ImageBackground>
-                <ScrollView style={{height:'100%', width:'100%', padding:20 }}>
-                    <Text style={styles.title}>Rukun Shalat</Text>
+                    
+                <ScrollView style={{height:'100%', width:'100%', padding:0, paddingTop:5}}>
                     {data.map((item) => (
                         <TouchableOpacity onPress={()=>{navigation.navigate("[id]", {id: item.id})}} style={styles.kartu} key={item.id}>
                             <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
                         </TouchableOpacity>
                         ))}
+                    <View style={{marginBottom:20}}></View>
+                    <Wajengan />
+                    <View style={{marginBottom:20}}></View>
+                    <Text style={{textAlign:'center', marginVertical:10,fontFamily:'poppins_italic', color:'#fff'}}>By Aulia</Text>
                 </ScrollView>
             </SafeAreaView>
         </>
@@ -54,19 +59,19 @@ const styles = StyleSheet.create({
         padding:20,
         backgroundColor: "#6345D4",
         paddingEnd: 20,
-        borderRadius: 10,
-        marginBottom:10,
-        marginTop:5,
-        // marginEnd:20,
-        // marginStart:20,
+        marginBottom:5,
+        elevation:5,
+        
     },
     kartu_id:{
-        color: "#fff"
+        color: "#fff",
+        fontSize: 18,
+        fontFamily:'poppins_regular'
     },
-    container: { flex: 1, alignItems: 'center', justifyContent: 'center', marginTop:60 },
+    container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
     bg_opening: {
         position: 'absolute',
-        height: '120%',
+        height: '200%',
         width: '120%',
         top: -400
     },

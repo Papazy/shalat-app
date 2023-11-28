@@ -10,6 +10,8 @@ export default function Layout(){
     const [fontsLoaded] = useFonts({
         poppins_regular: require('../assets/fonts/Poppins-Regular.ttf'),
         poppins_bold: require('../assets/fonts/Poppins-Bold.ttf'),
+        poppins_italic: require('../assets/fonts/Poppins-Italic.ttf'),
+        poppins_light: require('../assets/fonts/Poppins-Light.ttf'),
        
     })
     useEffect(()=>{

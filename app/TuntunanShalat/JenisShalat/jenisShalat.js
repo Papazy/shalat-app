@@ -3,17 +3,17 @@ import { Stack, useRouter, useNavigation } from 'expo-router'
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
 import { TouchableOpacity } from "react-native";
 
-
+import Wajengan from '../../../assets/wajengan';
 
 const jenisShalat = () => {
     const navigation = useNavigation();
     const handleButtonPress = () => {
         // Navigasi ke halaman 'Other'
-        navigation.navigate('(Fardhu)/fardhu');
+        navigation.navigate('Fardhu');
       };
     const handleButtonPress2 = () => {
         // Navigasi ke halaman 'Other'
-        navigation.navigate('(Sunnah)/sunnah');
+        navigation.navigate('Sunnah');
       };
     return (
         <>
@@ -36,7 +36,7 @@ const jenisShalat = () => {
                 <View style={styles.card_main}>
                     <Text style={styles.text_atas}>Jenis Shalat</Text>
                 
-                    <Image source={require('../../../assets/images/shalatyuk.png')} />
+                    <Wajengan />
                     <View style={{flexDirection: 'row', marginTop: 20}}>
                         <TouchableOpacity onPress={ handleButtonPress} style={[styles.card, { marginRight: 20 }]} >
                                 <Image source={require('../../../assets/images/jenisShalat.png')} />
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
     },
     card_main : {
-        backgroundColor: 'purple',
+        backgroundColor: '#165BAA',
         alignItems: 'center', 
         justifyContent: 'center',
         padding : 20,
