@@ -30,11 +30,16 @@ const index = () => {
     //     navigation.setOptions({headerShown:false});
     // },[navigation]);
     
+    
     return (
         <>
             <Stack.Screen 
                 options={{
-                    headerLeft: ()=>(<Burger />),
+                    headerLeft: ()=>(
+                        <TouchableOpacity onPress={() => navigation.navigate('Catatan')}>
+                            <Burger />
+                        </TouchableOpacity>
+                        ),
                     headerRight: ()=>(<Bell />),
                     // headerStyle:{
                     //     backgroundColor:'transparent'
