@@ -12,29 +12,34 @@ const praktekShalat = () => {
 
     const [data,setData] = useState([]);
 
-    const fetchData = () => {
-        setData(rukunData);
-      };
     useEffect(()=>{
         fetchData()
     },[]);
+    const fetchData = () => {
+        setData(rukunData);
+      };
 
 
     return (
         <>
             <SafeAreaView style={styles.container}>
             <Stack.Screen options={{
-                headerTransparent: true,
-                headerTitle: "",
-                headerTintColor: '#fff'
+                headerTransparent: false,
+                headerTitle: "Praktik Shalat",
+                headerTintColor: '#fff',
+                headerStyle: {
+                    backgroundColor:'#9c89ff',
+                },
+                headerTitleStyle: {
+                    fontFamily: 'poppins_bold',
+                }
             }}/>
                 <ImageBackground
                     source={require('../../../assets/images/bg_opening.png')}
                     style={styles.bg_opening}
                 >
                 </ImageBackground>
-                <ScrollView style={{height:'100%', width:'100%', padding:20 }}>
-                    <Text>Rukun Shalat</Text>
+                <ScrollView style={{height:'100%', width:'100%' }}>
                     {data.map((item) => (
                         <TouchableOpacity onPress={()=>{navigation.navigate("[id]", {id: item.id})}} style={styles.kartu} key={item.id}>
                             <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
@@ -53,16 +58,20 @@ const styles = StyleSheet.create({
         padding:20,
         backgroundColor: "#6345D4",
         paddingEnd: 20,
-        borderRadius: 10,
-        marginBottom:10,
-        marginTop:5,
+        // borderRadius: 10,
+        marginBottom:8,
+        elevation: 5,
+        shadowColor: 'black',
+        shadowOffset: { width: 3, height: 2 },
         // marginEnd:20,
         // marginStart:20,
     },
     kartu_id:{
-        color: "#fff"
+        color: "#fff",
+        fontSize: 18,
+        fontFamily: 'poppins_regular',
     },
-    container: { flex: 1, alignItems: 'center', justifyContent: 'center', marginTop:60 },
+    container: { flex: 1, alignItems: 'center', justifyContent: 'center', },
     bg_opening: {
         position: 'absolute',
         height: '120%',
@@ -161,7 +170,13 @@ const styles = StyleSheet.create({
         fontSize:20,
         marginTop:15,
         fontWeight: '700'
-    }
+    },
+    title: {
+        fontSize: 30,
+        fontWeight: '700',
+        color: '#fff',
+        marginBottom: 20
+    },
 })
 
 

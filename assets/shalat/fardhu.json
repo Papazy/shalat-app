@@ -1,22 +1,43 @@
 [
     {
-        "id" :1,
-        "nama":"Subuh"
+      "id": 1,
+      "nama": "Subuh",
+      "deskripsi": "Shalat Subuh adalah shalat pertama pada hari.",
+      "waktu": "Waktu Subuh dimulai dari terbitnya fajar hingga matahari terbit.",
+      "jumlah_rakaat": 2,
+      "Niat": "نَوَيْتُ الصَّلَاةَ لِلّٰهِ تَعَالٰى رَكْعَتَيِ الْفَجْرِ مُسْتَقْبِلًا الْكَعْبَةِ قِبْلَةً وَجْهِ اللّٰهِ تَعَالٰى"
     },
     {
-        "id" :2,
-        "nama":"Dzuhur"
+      "id": 2,
+      "nama": "Dzuhur",
+      "deskripsi": "Shalat Dzuhur adalah shalat keempat pada hari.",
+      "waktu": "Waktu Dzuhur dimulai setelah matahari melintasi tepat di atas kepala hingga sebelum matahari tergelincir.",
+      "jumlah_rakaat": 4,
+      "Niat": "نَوَيْتُ الصَّلَاةَ لِلّٰهِ تَعَالٰى رَكْعَتَيِ الظُّهْرِ أَرْبَعَةً مُسْتَقْبِلًا الْكَعْبَةِ قِبْلَةً وَجْهِ اللّٰهِ تَعَالٰى"
     },
     {
-        "id" :3,
-        "nama":"Ashar"
+      "id": 3,
+      "nama": "Ashar",
+      "deskripsi": "Shalat Ashar adalah shalat kelima pada hari.",
+      "waktu": "Waktu Ashar dimulai setelah waktu Dzuhur berakhir hingga matahari tergelincir.",
+      "jumlah_rakaat": 4,
+      "Niat": "نَوَيْتُ الصَّلَاةَ لِلّٰهِ تَعَالٰى رَكْعَتَيِ الْعَصْرِ أَرْبَعَةً مُسْتَقْبِلًا الْكَعْبَةِ قِبْلَةً وَجْهِ اللّٰهِ تَعَالٰى"
     },
     {
-        "id" :4,
-        "nama":"Magrib"
+      "id": 4,
+      "nama": "Magrib",
+      "deskripsi": "Shalat Magrib adalah shalat ketiga pada hari.",
+      "waktu": "Waktu Magrib dimulai setelah matahari tergelincir hingga terbenam sepenuhnya.",
+      "jumlah_rakaat": 3,
+      "Niat": "نَوَيْتُ الصَّلَاةَ لِلّٰهِ تَعَالٰى رَكْعَتَيِ الْمَغْرِبِ ثَلَاثًا مُسْتَقْبِلًا الْكَعْبَةِ قِبْلَةً وَجْهِ اللّٰهِ تَعَالٰى"
     },
     {
-        "id" :5,
-        "nama":"Isya"
+      "id": 5,
+      "nama": "Isya",
+      "deskripsi": "Shalat Isya adalah shalat keenam dan terakhir pada hari.",
+      "waktu": "Waktu Isya dimulai setelah waktu Magrib berakhir hingga setengah malam.",
+      "jumlah_rakaat": 4,
+      "Niat": "نَوَيْتُ الصَّلَاةَ لِلّٰهِ تَعَالٰى رَكْعَتَيِ الْعِشَاءِ أَرْبَعَةً مُسْتَقْبِلًا الْكَعْبَةِ قِبْلَةً وَجْهِ اللّٰهِ تَعَالٰى"
     }
-]
+  ]
+  

@@ -20,7 +20,11 @@ const sunnah = () => {
                 headerTitle: "Shalat Sunnah",
                 headerTransparent: false,
                 headerStyle: {backgroundColor: '#924dbf'},
-                headerTintColor:'white'
+                headerTintColor:'white',
+                headerTitleStyle:{
+                    fontFamily: 'poppins_bold',
+                    
+                }
             }}
         />
                 <ImageBackground
@@ -84,7 +88,7 @@ const styles = StyleSheet.create({
     },
     kartu_id:{
         color: "#000",
-        fontSize: 15,
+        fontSize: 18,
         // textAlign: 'center',
         fontFamily: 'poppins_regular',
     }

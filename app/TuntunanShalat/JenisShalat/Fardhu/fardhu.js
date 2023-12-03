@@ -1,167 +1,99 @@
 import React from "react";
-import { Stack, useRouter } from 'expo-router'
-import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
+import { Stack, useNavigation, useRouter } from 'expo-router'
+import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
 import { Link } from 'expo-router';
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import { useState, useEffect } from "react";
+const data = require('../../../../assets/shalat/fardhu.json');
+import Wajengan from "../../../../assets/wajengan";
+const sunnah = () => {
 
-const shalatData = require('../../../../assets/shalat/fardhu.json');
-
-const fardhu = () => {
-    const [data, setData] = useState([]);
-    const fetchData = () => {
-        setData(shalatData);
-      };
-    useEffect(() => {
-        fetchData();
-      }, []);
+    const handleOnPress = (id) => {
+        const navigation = useNavigation()
+        return () => {
+            navigation.navigate("[id]", {id:id})
+        }
+    }
 
     return (
         <>
-            <Stack.Screen options={{
-                headerTitle: "",
-                headerTransparent: true,
-                headerTintColor:'white'
-            }}/>
-            <SafeAreaView style={styles.container}>
+        <Stack.Screen 
+            options={{
+                headerTitle: "Shalat Fardhu",
+                headerTransparent: false,
+                headerStyle: {backgroundColor: '#924dbf'},
+                headerTintColor:'white',
+                headerTitleStyle:{
+                    fontFamily: 'poppins_bold',
+                    
+                }
+            }}
+        />
                 <ImageBackground
                     source={require('../../../../assets/images/bg_opening.png')}
                     style={styles.bg_opening}
                     >
                 </ImageBackground>
-                {/* <View style={styles.header}>
-                    <Back />
-        
-                    
-                </View> */}
-                <ScrollView>
-    
-                    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop:'20%', }}>
-             
-                        <Text style={styles.text_atas}>Shalat Fardhu</Text>
-
-                        <Image source={require('../../../../assets/images/shalatyuk.png')} />
-                        
-                                
-                            <View style={styles.cardWrapper}>
-                            {data.map((item) => (
-                                <TouchableOpacity style={styles.kartu} key={item.id}>
-                                    <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
-                                    
-                                </TouchableOpacity>
-                                ))}
-                            </View>
-                            
-                        
+                
+            <ScrollView style={[styles.container, {paddingTop:10}]}>
+                {/* <View styles={styles.cardContainer}> */}
+                    {data.map((item) => (
+                        <TouchableOpacity key={item.id} style={styles.cardWrapper} onPress={handleOnPress(item.id)}>
+                            <Text style={styles.kartu_id}>{item.nama}</Text>
+                        </TouchableOpacity>
+                    ))}
+                {/* </View> */}
+                    <View style={{flex:1, justifyContent:'center', alignItems:'center', padding: 0, marginTop: '10%'}}>
+                        <Wajengan />
                     </View>
-                </ScrollView>
-            </SafeAreaView>
+            </ScrollView>
         </>
     )
-
 }
 const styles = StyleSheet.create({
+    container: {marginTop: 0, top: 0, paddingTop: 0, width:'100%' },
+    bg_opening: {
+        width: '150%',
+        height: "150%",
+        marginTop: 0,
+        top: -50,
+        left: -100,
+        paddingTop: 0,
+        position: 'absolute',
+    },
+    
+    img_opening: { marginTop: 50 },
+    cardContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop:'30%',
+    },
+    cardWrapper:{
+        backgroundColor: '#fff',
+        width: '100%',
+        // height: 50,
+        // borderRadius: 10,
+        padding: 20,
+        marginBottom: 10,
+        // alignItems: 'center',
+        justifyContent: 'center',
+        // borderBottomColor: 'purple',
+        // borderBottomWidth: 2,
 
-    // card title
-    kartu:{
-        flex:1,
-        alignItems: 'flex-start', justifyContent: 'flex-start',
-        flexDirection:'row',
-        padding:20,
-        backgroundColor: "#6345D4",
-        paddingEnd: 20,
-        borderRadius: 10
+        elevation: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
     },
     kartu_id:{
-        color: "#fff"
-    },
-  
-
-    container: { flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 0, top: 0, paddingTop: 0, width:'100%' },
-    bg_opening: {
-        position: 'absolute',
-        height: '120%',
-        width: '120%',
-        top: -400
-    },
-    text: { textAlign: 'center',
-    //  fontFamily: 'Poppins_800ExtraBold',
-      color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
-    text_atas: {
-        fontSize: 40,
-        marginBottom: 10,
-        paddingBottom: 0,
-        marginTop: 0,
-        color: 'white',
-        fontWeight: '700'
-
-    },
-    text_bawah: { fontSize: 75, marginTop: 0, paddingTop: 0, lineHeight: 80 },
-    img_opening: { marginTop: 50 },
-    button: {
-        position: "absolute",
-        bottom: '18%',
-        height: 'auto',
-        backgroundColor: '#C471ED',
-        paddingHorizontal: 20,
-        paddingVertical: 10,
-        borderRadius: 50,
-        shadowColor: 'black',
-        shadowOffset: { width: 3, height: 2 },
-        shadowRadius: 5,
-        shadowOpacity: 60
-    },
-    buttonText: {
-        color: 'black',
-        fontSize: 20,
-        color: 'white'
-    },
-    text_subtitle: {
-        position: "absolute",
-        bottom: '10%',
-        fontSize: 13,
-        textAlign: 'center'
-    },
-    row: {
-        flexDirection: 'row',
-
-    },
-    header: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: "space-between",
-        width: '100%',
-        height: '10%',
-        paddingTop: 20,
-        paddingHorizontal: 20,
-        paddingBottom: 0,
-        position: 'absolute',
-        top: 0
-    },
-    body: {
-        marginTop: '20%'
-    },
-    footer: {
-        backgroundColor: '#8C52FF',
-        width: '100%',
-        justifyContent: 'space-between',
-        paddingHorizontal: 70,
-        paddingVertical: 20,
-        alignItems: 'center',
-        flexDirection: 'row',
-        borderTopLeftRadius: 50,
-        borderTopRightRadius: 50,
-        marginTop: 20
-    },
-    cardWrapper: {
-        backgroundColor:'rgba(47, 77, 173, 0.29)',
-        borderRadius: 10,
-        width:'100%',
-        padding: 10,
-        gap: 5
+        color: "#000",
+        fontSize: 18,
+        // textAlign: 'center',
+        fontFamily: 'poppins_regular',
     }
 
 })
 
 
-export default fardhu;
+export default sunnah;

@@ -6,6 +6,7 @@ import { TouchableOpacity } from "react-native";
 import { Link, useNavigation, Stack } from 'expo-router';
 import { useEffect } from "react";
 import Wajengan from "../../assets/wajengan";
+import { FontAwesome } from '@expo/vector-icons'; 
 // import * as Font from 'expo-font';
 // const fetchFonts = () => {
 //     return Font.loadAsync({
@@ -37,7 +38,7 @@ const index = () => {
                 options={{
                     headerLeft: ()=>(
                         <TouchableOpacity onPress={() => navigation.navigate('Catatan')}>
-                            <Burger />
+                            <FontAwesome name="pencil-square" size={42} color="white" />
                         </TouchableOpacity>
                         ),
                     headerRight: ()=>(<Bell />),
@@ -76,8 +77,8 @@ const index = () => {
                     <Image source={require('../../assets/images/takbir.png')} />
                 </View>
                 <View style={styles.footer}>
-                    <Image style={{ width: 40, height: 40 }} source={require('../../assets/images/icon-catatan.png')} />
-                    <Image style={{ width: 35, height: 35 }} source={require('../../assets/images/icon-jadwal.png')} />
+                    {/* <Image style={{ width: 40, height: 40 }} source={require('../../assets/images/icon-catatan.png')} />
+                    <Image style={{ width: 35, height: 35 }} source={require('../../assets/images/icon-jadwal.png')} /> */}
                 </View>
             </SafeAreaView>
         </>
