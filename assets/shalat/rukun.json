@@ -15,51 +15,79 @@
   },
   {
     "id": 3,
+    "nama": "Berdiri Bagi Yang Mampu",
+    "doa": "Saat menjalankan salat, rukun pertama yang harus kita penuhi yaitu berdiri. Di rukun ini ada pengecualian untuk orang-orang yang sudah tidak mampu berdiri, mereka dapat salat dengan duduk atau berbaring.",
+    "terjemahan": "",
+    "repetisi": 0
+  },
+  {
+    "id": 4,
     "nama": "Membaca Surat Al Fatihah",
     "doa": "  بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ .الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ. الرَّحْمَٰنِ الرَّحِيمِ. مَالِكِ يَوْمِ الدِّينِ. إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ. اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ. صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ المَغْضُوبِ عَلَيْهِمْ وَلا الضَّالِّينَ",
     "terjemahan": "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam. Maha Pengasih lagi Maha Penyayang. Penguasa di hari pembalasan. Hanya kepada Engkau kami menyembah dan hanya kepada Engkau kami mohon pertolongan. Tunjukkalah kami jalan yang lurus, jalan orang-orang yang telah Engkau beri nikmat, bukan jalan orang-orang yang dimurkai dan bukan pula jalan orang-orang sesat.",
     "repetisi": 1
   },
   {
-    "id": 4,
+    "id": 5,
     "nama": "Ruku'",
-    "doa": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+    "doa": "سُبْحَانَ رَبِّيَ الْعَظِيْمِ وَبِحَمْدِه",
     "terjemahan": "Maha Suci Tuhanku yang Maha Agung.",
     "repetisi": 3
   },
   {
-    "id": 5,
+    "id": 6,
     "nama": "I'tidal",
     "doa": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ",
     "terjemahan": "Allah mendengar orang yang memuji-Nya.",
     "repetisi": 1
   },
   {
-    "id": 6,
-    "nama": "Sujud Pertama",
-    "doa": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+    "id": 7,
+    "nama": "Sujud",
+    "doa": "سُبْحَانَ رَبِّيَ الْأَعْلَىَ وَبِحَمْدِهِ",
     "terjemahan": "Maha Suci Tuhanku yang Maha Tinggi.",
     "repetisi": 3
   },
   {
-    "id": 7,
+    "id": 8,
     "nama": "Duduk di antara Dua Sujud",
-    "doa": "رَبِّ اغْفِرْلِي وَارْحَمْنِي وَاعْفِ عَنِّي وَافْضِلْ عَلَيَّ وَارْزُقْنِي",
+    "doa": "رَبِّ اغْفِرْ لِيْ وَارْحَمْنِي وَاجْبُرْنِي وارْفَعْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي",
     "terjemahan": "Ya Tuhanku, ampunilah aku dan rahmatilah aku, maafkanlah aku, dan berilah aku karunia dan rezeki.",
     "repetisi": 1
   },
   {
-    "id": 8,
-    "nama": "Tasyahud Awal",
-    "doa": "أَلْحَمْدُ لِلَّهِ وَالصَّلَاةُ وَالسَّلَامُ عَلَى رَسُولِ اللَّهِ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+    "id": 9,
+    "nama": "Duduk Tasyahud Akhir",
+    "doa": "Duduk Tasyahud akhir (tawarruk) adalah duduk dengan menegakkan kaki kanan dan menghamparkan kaki kiri ke depan (di bawah kaki kanan), dan duduknya di atas tanah/lantai.",
+    "terjemahan": "",
+    "repetisi": 0
+  },
+  {
+    "id": 10,
+    "nama": "Membaca Tasyahud Akhir",
+    "doa": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِىُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِالصَّالِحِينَ ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
     "terjemahan": "Segala puji bagi Allah, shalawat dan salam semoga terlimpah kepada Rasulullah, aku bersaksi bahwa tidak ada ilah yang berhak disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
     "repetisi": 1
   },
   {
-    "id": 9,
+    "id": 11,
+    "nama": "Shalawat",
+    "doa": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ ، كَمَا صَلَّيْتَ عَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِيدٌ ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ ، كَمَا بَارَكْتَ عَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِي",
+    "terjemahan": "Segala puji bagi Allah, shalawat dan salam semoga terlimpah kepada Rasulullah, aku bersaksi bahwa tidak ada ilah yang berhak disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
+    "repetisi": 1
+  },
+  {
+    "id": 12,
     "nama": "Salam Pertama",
     "doa": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ",
     "terjemahan": "Semoga keselamatan, rahmat, dan berkah Allah terlimpah kepadamu.",
     "repetisi": 1
+  },
+  {
+    "id": 13,
+    "nama": "Tertib",
+    "doa": "Yaitu melakukan shalat atau semua rukun shalat dengan beraturan.",
+    "terjemahan": "",
+    "repetisi": 0
   }
 ]

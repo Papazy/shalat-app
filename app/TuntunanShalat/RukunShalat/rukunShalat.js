@@ -28,7 +28,11 @@ const rukunShalat = () => {
                 headerTransparent: false,
                 headerTitle: "Rukun Shalat",
                 headerStyle:{backgroundColor: '#924dbf'},
-                headerTintColor: '#fff'
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontSize: 20,
+                    fontFamily:'poppins_bold'
+                },
             }}/>
                 <ImageBackground
                     source={require('../../../assets/images/bg_opening.png')}
@@ -39,7 +43,7 @@ const rukunShalat = () => {
                 <ScrollView style={{height:'100%', width:'100%', padding:0, paddingTop:5}}>
                     {data.map((item) => (
                         <TouchableOpacity onPress={()=>{navigation.navigate("[id]", {id: item.id})}} style={styles.kartu} key={item.id}>
-                            <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
+                            <Text style={styles.kartu_id}>{item.id}.  {item.nama}</Text>
                         </TouchableOpacity>
                         ))}
                     <View style={{marginBottom:20}}></View>
@@ -57,14 +61,14 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start', justifyContent: 'flex-start',
         flexDirection:'row',
         padding:20,
-        backgroundColor: "#6345D4",
+        backgroundColor: "white",
         paddingEnd: 20,
         marginBottom:5,
         elevation:5,
         
     },
     kartu_id:{
-        color: "#fff",
+        color: "black",
         fontSize: 18,
         fontFamily:'poppins_regular'
     },
