@@ -4,6 +4,7 @@ import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "re
 import { Link } from 'expo-router';
 import { ScrollView, TouchableOpacity } from "react-native";
 import { useEffect, useState } from "react";
+import Wajengan from "../../../assets/wajengan";
 
 const rukunData = require('../../../assets/shalat/rukun.json')
 
@@ -27,7 +28,7 @@ const praktekShalat = () => {
                 headerTransparent: false,
                 headerTitle: "Praktik Shalat",
                 headerTintColor: '#fff',
-                headerStyle: {
+                headerStyle: {  
                     backgroundColor:'#9c89ff',
                 },
                 headerTitleStyle: {
@@ -42,9 +43,12 @@ const praktekShalat = () => {
                 <ScrollView style={{height:'100%', width:'100%' }}>
                     {data.map((item) => (
                         <TouchableOpacity onPress={()=>{navigation.navigate("[id]", {id: item.id})}} style={styles.kartu} key={item.id}>
-                            <Text style={styles.kartu_id}>{item.id}. {item.nama}</Text>
+                            <Text style={styles.kartu_id}>{item.id}.  {item.nama}</Text>
                         </TouchableOpacity>
                         ))}
+                    <View style={{marginBottom:20}}></View>
+                        <Wajengan />
+                    <View style={{marginBottom:20}}></View> 
                 </ScrollView>
             </SafeAreaView>
         </>
@@ -56,7 +60,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start', justifyContent: 'flex-start',
         flexDirection:'row',
         padding:20,
-        backgroundColor: "#6345D4",
+        backgroundColor: "white",
         paddingEnd: 20,
         // borderRadius: 10,
         marginBottom:8,
@@ -67,15 +71,15 @@ const styles = StyleSheet.create({
         // marginStart:20,
     },
     kartu_id:{
-        color: "#fff",
+        color: "black",
         fontSize: 18,
         fontFamily: 'poppins_regular',
     },
     container: { flex: 1, alignItems: 'center', justifyContent: 'center', },
     bg_opening: {
         position: 'absolute',
-        height: '120%',
-        width: '120%',
+        height: '150%',
+        width: '150%',
         top: -400
     },
     text: { textAlign: 'center',

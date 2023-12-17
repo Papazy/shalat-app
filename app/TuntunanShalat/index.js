@@ -41,7 +41,6 @@ const index = () => {
                             <FontAwesome name="pencil-square" size={42} color="white" />
                         </TouchableOpacity>
                         ),
-                    headerRight: ()=>(<Bell />),
                     // headerStyle:{
                     //     backgroundColor:'transparent'
                     // },

@@ -95,20 +95,25 @@ export default function praktek() {
     return (<>
         <Stack.Screen
             options={{
-                headerTitle: "",
-                headerTransparent: true,
-                headerShadowVisible: false
-
-
+                headerTitle: data.nama,
+                headerTransparent: false,
+                headerTintColor: '#fff',
+                headerStyle: {  
+                    backgroundColor:'#1e2f97',
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems : 'center'
+                },
+                headerTitleStyle: {
+                    fontFamily: 'poppins_bold',
+                }
             }}
         />
         <ScrollView>
 
             <View style={styles.center}>
 
-                <View style={[styles.center, styles.asset, {marginTop:15} ]}>
 
-                    <Text style={[styles.title_nama, { fontFamily: 'poppins_bold', fontSize: 20, color: "#1e2f97", marginBottom: 5 }]}>{data.nama}</Text>
                     {isPreloading &&
                         <ActivityIndicator
                             animating
@@ -135,10 +140,10 @@ export default function praktek() {
                             }
                         />
                     </View> */}
-                </View>
                 <View style={styles.kartu}>
+                        {data.repetisi > 0 && (<>
                     <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:"flex-start"}}>
-
+                        
                         <Text style={[styles.title_label, styles.title]}>Bacaan :</Text>
                         {!isPlaying ? (
 
@@ -168,13 +173,25 @@ export default function praktek() {
                         </View>
                         )}
                     </View>
-                    <Text style={[styles.title_doa, styles.title]}>{data.doa}</Text>
-
-                    <Text style={[styles.title_label, styles.title]}>Terjemahan : </Text>
-                    <Text style={[styles.title_terjemah, styles.title]}>{data.terjemahan}</Text>
-                    {data.repetisi > 1 && (
-                        <Text style={[styles.title_repetisi, styles.title]}>Diulang sebanyak {data.repetisi}x</Text>
-                    )}
+                        </>)}
+                    {data.repetisi > 0 && (
+                        <>
+                        <Text style={[styles.title_doa, styles.title]}>{data.doa}</Text>
+    
+                        <Text style={[styles.title_label, styles.title]}>Terjemahan : </Text>
+                        <Text style={[styles.title_terjemah, styles.title]}>{data.terjemahan}</Text>
+                        {data.repetisi > 1 && (
+                            <Text style={[styles.title_repetisi, styles.title]}>Diulang sebanyak {data.repetisi}x</Text>
+                        )}
+                        </>
+                    ) }
+                    {data.repetisi < 1 && (
+                        <>
+                        <Text style={[styles.title_label, styles.title]}>{data.nama}</Text>
+                        <Text style={[styles.title_terjemah, styles.title]}>{data.doa}</Text>
+                       
+                        </>
+                    ) }
                 </View>
 
             </View>
@@ -199,7 +216,7 @@ export default function praktek() {
 const styles = StyleSheet.create({
     center: { flex: 5, alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'white' },
     kartu: {
-        justifyContent: 'flex-start', backgroundColor: '#1e2f97', width: '100%', paddingVertical: 20, paddingHorizontal: 40, borderTopLeftRadius: 40, minHeight: 70, paddingBottom: 80,
+        justifyContent: 'flex-start', backgroundColor: '#1e2f97', width: '100%', paddingVertical: 60, paddingHorizontal: 40, borderTopLeftRadius: 40, minHeight: 70, paddingBottom: 80,
         borderTopRightRadius: 40,
     },
     title: { color: 'white' },

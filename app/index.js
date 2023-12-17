@@ -37,7 +37,7 @@ const Home = () => {
                 </Link>
                 <Text></Text>
                 <Text></Text>
-                <Text style={styles.text_subtitle}>Develop by{'\n'}Aulia</Text>
+                <Text style={styles.text_subtitle}>Develop by{'\n'}Aulia Litunzira</Text>
                 
             </SafeAreaView>
         </>
