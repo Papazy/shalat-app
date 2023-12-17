@@ -1,36 +1,13 @@
 import React from "react";
 import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "react-native";
-import Bell from '../../assets/icons/bell'
-import Burger from "../../assets/icons/burger";
 import { TouchableOpacity } from "react-native";
-import { Link, useNavigation, Stack } from 'expo-router';
-import { useEffect } from "react";
-import Wajengan from "../../assets/wajengan";
+import { useNavigation, Stack } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons'; 
-// import * as Font from 'expo-font';
-// const fetchFonts = () => {
-//     return Font.loadAsync({
-//       'poppins-regular': require('../../assets/fonts/Poppins-Regular.ttf'),
-//       'poppins-bold': require('../../assets/fonts/Poppins-Bold.ttf'),
-//     });
-//   };
 
 const index = () => {
-    // useEffect(() => {
-    //     const loadFonts = async () => {
-    //       await Font.loadAsync({
-    //         'poppins-regular': require('../../assets/fonts/Poppins-Regular.ttf'),
-    //         'poppins-bold': require('../../assets/fonts/Poppins-Bold.ttf'),
-    //       });
-    //     };
-    
-    //     loadFonts();
-    //   }, []);
+
     const navigation = useNavigation();
-    // useEffect(()=>{
-    //     navigation.setOptions({headerShown:false});
-    // },[navigation]);
-    
+ 
     
     return (
         <>
@@ -41,9 +18,7 @@ const index = () => {
                             <FontAwesome name="pencil-square" size={42} color="white" />
                         </TouchableOpacity>
                         ),
-                    // headerStyle:{
-                    //     backgroundColor:'transparent'
-                    // },
+                
                     headerTransparent: true,
                     headerTitle:''
                 }}
@@ -76,8 +51,6 @@ const index = () => {
                     <Image source={require('../../assets/images/takbir.png')} />
                 </View>
                 <View style={styles.footer}>
-                    {/* <Image style={{ width: 40, height: 40 }} source={require('../../assets/images/icon-catatan.png')} />
-                    <Image style={{ width: 35, height: 35 }} source={require('../../assets/images/icon-jadwal.png')} /> */}
                 </View>
             </SafeAreaView>
         </>
