@@ -12,8 +12,7 @@ export default function Layout(){
             <Stack.Screen name="JenisShalat" />
             <Stack.Screen name="RukunShalat" />
             <Stack.Screen name="PraktekShalat" />
-            <Stack.Screen name="Catatan" />
-           
+            <Stack.Screen name="Catatan" /> 
         </Stack >
     )
 }

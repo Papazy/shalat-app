@@ -23,7 +23,7 @@ const Wajengan = () => {
   return (
     <>
     <ImageBackground 
-      source={require('./images/wajengan-bg.jpg')}
+      source={require('./images/wajenganBg.jpg')}
       style={styles.container}
       imageStyle={{ borderRadius: 20}}
       >

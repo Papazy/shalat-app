@@ -6,7 +6,7 @@ import { ScrollView, TouchableOpacity } from "react-native";
 import { useEffect, useState } from "react";
 import Wajengan from "../../../assets/wajengan";
 
-const rukunData = require('../../../assets/shalat/rukun.json')
+const rukunData = require('../../../assets/shalat/praktik.json')
 
 const praktekShalat = () => {
     const navigation = useNavigation();
@@ -36,13 +36,13 @@ const praktekShalat = () => {
                 }
             }}/>
                 <ImageBackground
-                    source={require('../../../assets/images/bg_opening.png')}
-                    style={styles.bg_opening}
+                    source={require('../../../assets/images/bgOpening.png')}
+                    style={styles.bgOpening}
                 >
                 </ImageBackground>
                 <ScrollView style={{height:'100%', width:'100%' }}>
                     {data.map((item) => (
-                        <TouchableOpacity onPress={()=>{navigation.navigate("[id]", {id: item.id})}} style={styles.kartu} key={item.id}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('[id]', {id:item.id})}} style={styles.kartu} key={item.id}>
                             <Text style={styles.kartu_id}>{item.id}.  {item.nama}</Text>
                         </TouchableOpacity>
                         ))}
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         fontFamily: 'poppins_regular',
     },
     container: { flex: 1, alignItems: 'center', justifyContent: 'center', },
-    bg_opening: {
+    bgOpening: {
         position: 'absolute',
         height: '150%',
         width: '150%',

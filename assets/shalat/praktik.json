@@ -1,0 +1,191 @@
+[
+    {
+      "id": 1,
+      "nama": "Niat",
+      "doa": "أُصَلِّى فَرْضَ الصُّبْح رَكَعتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لله تَعَالَى",
+      "terjemahan": "Aku berniat untuk shalat fardhu subuh dua rakaat menghadap kiblat dengan ikhlas karena Allah Ta'ala.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/niat.m4a",
+      "linkVideo" : "niat.mp4"
+    },
+    {
+      "id": 2,
+      "nama": "Takbiratul Ihram",
+      "doa": "اللَّهُ أَكْبَرُ",
+      "terjemahan": "Allah Maha Besar.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/Takbir.m4a",
+      "linkVideo" : "takbiratulIhram.mp4"
+    },
+    {
+      "id": 3,
+      "nama": "Iftitah",
+      "doa": "اَللهُ اَكْبَرُ كَبِيْرًا وَالْحَمْدُ لِلّهِ كَثِيْرًا وَسُبْحَانَ اللهِ بُكْرَةً وَاَصِيْلًا. اِنِّى وَجَّهْتُ وَجْهِيَ لِلَّذِيْ فَطَرَالسَّمَاوَاتِ وَالْاَرْضَ حَنِيْفًا مُسْلِمًا وَمَا اَنَا مِنَ الْمُشْرِكِيْنَ. اِنَّ صَلَاتِيْ وَنُسُكِيْ وَمَحْيَايَ وَمَمَاتِيْ لِلّهِ رَبِّ الْعَا لَمِيْنَ. لاَ شَرِيْكَ لَهُ وَبِذَلِكَ اُمِرْتُ وَاَنَا مِنَ الْمُسْلِمِيْنَ",
+      "terjemahan": "Allah Maha Besar dengan sebesar-besarnya, segala puji bagi Allah dengan pujian yang banyak. Maha Suci Allah pada waktu pagi dan petang. Sesungguhnya aku hadapkan wajahku kepada Allah yang telah menciptakan langit dan bumi dengan segenap kepatuhan atau dalam keadaan tunduk, dan aku bukanlah dari golongan orang-orang yang menyekutukan-Nya. Sesungguhnya sholatku, ibadahku, hidup dan matiku hanyalah untuk Allah Tuhan Semesta Alam, yang tidak ada sekutu bagi-Nya. Dengan yang demikian itulah aku diperintahkan. Dan aku adalah termasuk orang-orang muslim.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/",
+      "linkVideo" : "berdiri.mp4"
+    },
+    {
+      "id": 4,
+      "nama": "Membaca Surat Al Fatihah",
+      "doa": "  بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ .الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ. الرَّحْمَٰنِ الرَّحِيمِ. مَالِكِ يَوْمِ الدِّينِ. إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ. اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ. صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ المَغْضُوبِ عَلَيْهِمْ وَلا الضَّالِّينَ",
+      "terjemahan": "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam. Maha Pengasih lagi Maha Penyayang. Penguasa di hari pembalasan. Hanya kepada Engkau kami menyembah dan hanya kepada Engkau kami mohon pertolongan. Tunjukkalah kami jalan yang lurus, jalan orang-orang yang telah Engkau beri nikmat, bukan jalan orang-orang yang dimurkai dan bukan pula jalan orang-orang sesat.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/iftitah.m4a",
+      "linkVideo" : "alfatihah.mp4"
+    },
+    {
+      "id": 5,
+      "nama": "Membaca Surat Pendek",
+      "doa": "سُبْحَانَ رَبِّيَ الْعَظِيْمِ وَبِحَمْدِه",
+      "terjemahan": "Maha Suci Tuhanku yang Maha Agung.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/Rukuk.m4a",
+      "linkVideo" : "ruku.mp4"
+    },
+    {
+      "id": 6,
+      "nama": "Takbir",
+      "doa": "اللَّهُ أَكْبَرُ",
+      "terjemahan": "Allah Maha Besar.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/itidal.m4a",
+      "linkVideo" : "itidal.mp4"
+    },
+    {
+      "id": 7,
+      "nama": "Rukuk",
+      "doa": "سُبْحَانَ رَبِّيَ الْعَظِيْمِ وَبِحَمْدِه",
+      "terjemahan": "Allah mendengar orang yang memuji-Nya.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/itidal.m4a",
+      "linkVideo" : "itidal.mp4"
+    },
+    {
+      "id": 8,
+      "nama": "Bangun dari Rukuk",
+      "doa": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ",
+      "terjemahan": "Allah mendengar orang yang memuji-Nya.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/itidal.m4a",
+      "linkVideo" : "itidal.mp4"
+    },
+    {
+      "id": 9,
+      "nama": "I'tidal",
+      "doa": "رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ",
+      "terjemahan": "Allah mendengar orang yang memuji-Nya.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/itidal.m4a",
+      "linkVideo" : "itidal.mp4"
+    },
+    {
+      "id": 10,
+      "nama": "Takbir",
+      "doa": "اللَّهُ أَكْبَرُ",
+      "terjemahan": "Allah Maha Besar.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/sujud.m4a",
+      "linkVideo" : "sujud.mp4"
+    },
+    {
+      "id": 11,
+      "nama": "Sujud",
+      "doa": "سُبْحَانَ رَبِّيَ الْأَعْلَىَ وَبِحَمْدِهِ",
+      "terjemahan": "Maha Suci Tuhanku yang Maha Tinggi.",
+      "repetisi": 3,
+      "linkAudio" : "../../../assets/audio/sujud.m4a",
+      "linkVideo" : "sujud.mp4"
+    },
+    {
+      "id": 12,
+      "nama": "Takbir",
+      "doa": "اللَّهُ أَكْبَرُ",
+      "terjemahan": "Allah Maha Besar.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/sujud.m4a",
+      "linkVideo" : "sujud.mp4"
+    },
+    {
+      "id": 13,
+      "nama": "Duduk di antara Dua Sujud",
+      "doa": "رَبِّ اغْفِرْ لِيْ وَارْحَمْنِي وَاجْبُرْنِي وارْفَعْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي",
+      "terjemahan": "Ya Tuhanku, ampunilah aku dan rahmatilah aku, maafkanlah aku, dan berilah aku karunia dan rezeki.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/dudukSujud.m4a",
+      "linkVideo" : "dudukSujud.mp4"
+    },
+    {
+      "id": 14,
+      "nama": "Takbir",
+      "doa": "اللَّهُ أَكْبَرُ",
+      "terjemahan": "Allah Maha Besar.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/sujud.m4a",
+      "linkVideo" : "sujud.mp4"
+    },
+    {
+      "id": 15,
+      "nama": "Sujud",
+      "doa": "سُبْحَانَ رَبِّيَ الْأَعْلَىَ وَبِحَمْدِهِ",
+      "terjemahan": "Maha Suci Tuhanku yang Maha Tinggi.",
+      "repetisi": 3,
+      "linkAudio" : "../../../assets/audio/sujud.m4a",
+      "linkVideo" : "sujud.mp4"
+    },
+    {
+      "id": 16,
+      "nama": "Takbir",
+      "doa": "اللَّهُ أَكْبَرُ",
+      "terjemahan": "Allah Maha Besar.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/sujud.m4a",
+      "linkVideo" : "sujud.mp4"
+    },
+    {
+      "id": 17,
+      "nama": "Duduk Tasyahud Awal",
+      "doa": "Duduk Tasyahud akhir (tawarruk) adalah duduk dengan menegakkan kaki kanan dan menghamparkan kaki kiri ke depan (di bawah kaki kanan), dan duduknya di atas tanah/lantai.",
+      "terjemahan": "",
+      "repetisi": 0,
+      "linkAudio" : "../../../assets/audio/",
+      "linkVideo" : "dudukTasyahud.mp4"
+    },
+    {
+      "id": 18,
+      "nama": "Duduk Tasyahud Akhir",
+      "doa": "Duduk Tasyahud akhir (tawarruk) adalah duduk dengan menegakkan kaki kanan dan menghamparkan kaki kiri ke depan (di bawah kaki kanan), dan duduknya di atas tanah/lantai.",
+      "terjemahan": "",
+      "repetisi": 0,
+      "linkAudio" : "../../../assets/audio/",
+      "linkVideo" : "dudukTasyahud.mp4"
+    },
+    {
+      "id": 19,
+      "nama": "Membaca Tasyahud",
+      "doa":"التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِىُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ , أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",       
+      "terjemahan": "Segala puji bagi Allah, shalawat dan salam semoga terlimpah kepada Rasulullah, aku bersaksi bahwa tidak ada ilah yang berhak disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/Tasyahud.m4a",
+      "linkVideo" : "tasyahud.mp4"
+    },
+    {
+      "id": 20,
+      "nama": "Shalawat",
+      "doa": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ ، وَعَلَى آلِ مُحَمَّدٍوَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ ، وَعَلَى آلِ مُحَمَّدٍ ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ ، وَعَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِيدٌ",
+      "terjemahan": "Segala puji bagi Allah, shalawat dan salam semoga terlimpah kepada Rasulullah, aku bersaksi bahwa tidak ada ilah yang berhak disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/shalawat.m4a",
+      "linkVideo" : "shalawat.mp4"
+    },
+    {
+      "id": 21,
+      "nama": "Salam",
+      "doa": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ",
+      "terjemahan": "Semoga keselamatan, rahmat, dan berkah Allah terlimpah kepadamu.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/Salam.m4a",
+      "linkVideo" : "salam.mp4"
+    }
+  ]

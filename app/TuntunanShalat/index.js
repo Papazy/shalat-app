@@ -8,25 +8,25 @@ const index = () => {
 
     const navigation = useNavigation();
  
-    
+    const ukuran = 90;   
     return (
         <>
             <Stack.Screen 
                 options={{
                     headerLeft: ()=>(
-                        <TouchableOpacity onPress={() => navigation.navigate('Catatan')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Catatan')} style={{paddingLeft:7, paddingTop:5}}>
                             <FontAwesome name="pencil-square" size={42} color="white" />
                         </TouchableOpacity>
                         ),
-                
+                    
                     headerTransparent: true,
                     headerTitle:''
                 }}
             />
             <SafeAreaView style={styles.container}>
                 <ImageBackground
-                    source={require('../../assets/images/bg_opening.png')}
-                    style={styles.bg_opening}
+                    source={require('../../assets/images/bgOpening.png')}
+                    style={styles.bgOpening}
                 >
                 </ImageBackground>
                 <View style={[styles.body, styles.container]}>
@@ -36,19 +36,19 @@ const index = () => {
                     {/* <Wajengan /> */}
                     <View style={[styles.container, styles.row]}>
                         <TouchableOpacity onPress={()=>{navigation.navigate("RukunShalat")}} style={[styles.card,{ marginRight: 10 } ]}>
-                            <Image source={require('../../assets/images/mengaji.png')} />
+                            <Image style={{width:ukuran, height:ukuran}} source={require('../../assets/images/mengaji.png')} />
                             <Text style= {styles.card_title}>Rukun</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={()=>{navigation.navigate("JenisShalat")}} style={[styles.card, { marginRight: 10 }]} >
-                            <Image source={require('../../assets/images/sajadah.png')} />
+                            <Image style={{width:ukuran, height:ukuran}} source={require('../../assets/images/sajadah.png')} />
                             <Text style= {styles.card_title}>Jenis</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={()=>{navigation.navigate("PraktekShalat")}} style={[styles.card]}>
-                            <Image source={require('../../assets/images/orangshalat.png')} />
+                            <Image style={{width:ukuran, height:ukuran}} source={require('../../assets/images/orangshalat.png')} />
                             <Text style= {styles.card_title}>Praktek</Text>
                         </TouchableOpacity>
                     </View>
-                    <Image source={require('../../assets/images/takbir.png')} />
+                    <Image style={{width:300, height:90, borderRadius:20}} source={require('../../assets/images/takbir.png')} />
                 </View>
                 <View style={styles.footer}>
                 </View>
@@ -58,8 +58,8 @@ const index = () => {
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-    bg_opening: {
+    container: { flex: 1, alignItems: 'center', justifyContent: 'center', },
+    bgOpening: {
         position: 'absolute',
         height: '120%',
         width: '120%',
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
     text_atas: {
         fontSize: 40,
         marginBottom: 10,
-        paddingBottom: 0,
-        marginTop: 0,
+        paddingBottom: 10,
+        marginTop: 20,
         color: 'white',
         fontWeight:'700'
 

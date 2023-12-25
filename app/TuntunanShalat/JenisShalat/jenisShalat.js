@@ -15,6 +15,7 @@ const jenisShalat = () => {
         // Navigasi ke halaman 'Other'
         navigation.navigate('Sunnah');
       };
+      const ukuran = 120;
     return (
         <>
             <Stack.Screen
@@ -29,21 +30,21 @@ const jenisShalat = () => {
             />
             <SafeAreaView style={styles.container}>
                 <ImageBackground
-                    source={require('../../../assets/images/bg_opening.png')}
-                    style={styles.bg_opening}
+                    source={require('../../../assets/images/bgOpening.png')}
+                    style={styles.bgOpening}
                 >
                 </ImageBackground>
                 <View style={styles.card_main}>
                     <Text style={styles.text_atas}>Jenis Shalat</Text>
                 
                     <Wajengan />
-                    <View style={{flexDirection: 'row', marginTop: 20}}>
+                    <View style={{flexDirection: 'row', marginTop: 50}}>
                         <TouchableOpacity onPress={ handleButtonPress} style={[styles.card, { marginRight: 20 }]} >
-                                <Image source={require('../../../assets/images/jenisShalat.png')} />
+                                <Image style={{width:ukuran, height:ukuran}} source={require('../../../assets/images/jenisShalat.png')} />
                                 <Text style= {styles.card_title}>Fardhu</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={ handleButtonPress2} style={[styles.card]} >
-                                <Image source={require('../../../assets/images/jenisShalat.png')} />
+                                <Image style={{width:ukuran, height:ukuran}} source={require('../../../assets/images/jenisShalat.png')} />
                                 <Text style= {styles.card_title}>Sunnah</Text>
                         </TouchableOpacity>
                     </View>
@@ -53,8 +54,8 @@ const jenisShalat = () => {
     )
 }
 const styles = StyleSheet.create({
-    container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-    bg_opening: {
+    container: { flex: 1, alignItems: 'center', justifyContent: 'center', padding:20 },
+    bgOpening: {
         position: 'absolute',
         height: '120%',
         width: '120%',
@@ -64,9 +65,9 @@ const styles = StyleSheet.create({
     //  fontFamily: 'Poppins_800ExtraBold', 
      color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
     text_atas: {
-        fontSize: 40,
-        marginBottom: 10,
-        paddingBottom: 0,
+        fontSize: 36,
+        marginBottom: 20,
+        paddingBottom: 30,
         marginTop: 0,
         color: 'white',
         fontWeight:'700'

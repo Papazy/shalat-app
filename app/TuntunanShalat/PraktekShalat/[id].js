@@ -1,5 +1,7 @@
 import { Text, View, SafeAreaView, Image, StyleSheet, TouchableOpacity, Button, ScrollView, ActivityIndicator } from "react-native";
-import { useNavigation, Stack } from 'expo-router'
+import { useNavigation, Stack, useIsFocuse } from 'expo-router'
+import { useIsFocused } from '@react-navigation/native';
+
 import { Audio, Video, ResizeMode } from 'expo-av';
 import { useLocalSearchParams } from "expo-router";
 import { useState, useEffect } from "react";
@@ -7,31 +9,129 @@ import React from "react";
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
-const rukunData = require('../../../assets/shalat/rukun.json')
+const rukunData = require('../../../assets/shalat/praktik.json')
+
+
+const audioPaths = [
+    require("../../../assets/audio/niatSubuh.m4a"), // 1
+    require("../../../assets/audio/takbir.m4a"), // 2
+    require("../../../assets/audio/iftitah.m4a"), // 3
+    require("../../../assets/audio/alfatihah.m4a"), // 4
+    require("../../../assets/audio/suratpendek.m4a"), // 5
+    require("../../../assets/audio/takbir.m4a"), // 6
+    require("../../../assets/audio/rukuk.m4a"), // 7
+    require("../../../assets/audio/bangunRukuk.m4a"), // 8
+    require("../../../assets/audio/itidal.m4a"), // 9
+    require("../../../assets/audio/takbir.m4a"), // 10
+    require("../../../assets/audio/sujud.m4a"), // 11
+    require("../../../assets/audio/takbir.m4a"), // 12
+    require("../../../assets/audio/dudukSujud.m4a"), // 13
+    require("../../../assets/audio/takbir.m4a"), // 14
+    require("../../../assets/audio/sujud.m4a"),// 15
+    require("../../../assets/audio/takbir.m4a"), // 16
+    "", // !!! duduk tasyahud Awal 17
+    "", // !!! duduk tasyahud Akhir 18
+    require("../../../assets/audio/tasyahud.m4a"),// 19
+    require("../../../assets/audio/shalawat.m4a"), // 20
+    require("../../../assets/audio/salam.m4a"), // 21
+];
+const videoPaths = [
+    require('../../../assets/video/1.mp4'),
+    require('../../../assets/video/2.mp4'),
+    require('../../../assets/video/3.mp4'),
+    require('../../../assets/video/4.mp4'),
+    require('../../../assets/video/5.mp4'),
+    require('../../../assets/video/6.mp4'),
+    require('../../../assets/video/7.mp4'),
+    require('../../../assets/video/8.mp4'),
+    require('../../../assets/video/9.mp4'),
+    require('../../../assets/video/10.mp4'),
+    require('../../../assets/video/11.mp4'),
+    require('../../../assets/video/12.mp4'),
+    require('../../../assets/video/13.mp4'),
+    require('../../../assets/video/14.mp4'),
+    require('../../../assets/video/15.mp4'),
+    require('../../../assets/video/16.mp4'),
+    require('../../../assets/video/17.mp4'),
+    require('../../../assets/video/18.mp4'),
+    require('../../../assets/video/19.mp4'),
+    require('../../../assets/video/20.mp4'),
+    require('../../../assets/video/21.mp4'),
+];
+
 
 export default function praktek() {
+    const [videoState, setVideoPath] = useState('');
+    const { id } = useLocalSearchParams();
+    const data = rukunData.find((item) => item.id === id);
     const navigation = useNavigation();
+    const isFocused = useIsFocused();
     const [Loaded, SetLoaded] = React.useState(false);
     const [Loading, SetLoading] = React.useState(false);
-    const sound = React.useRef(new Audio.Sound());
-    const [isPlaying, setIsPlaying] = useState(false);
-
-    const video = React.useRef(null);
     const [status, setStatus] = React.useState({});
+    const video = React.useRef(null);
+    const [numberId, setNumberId] = useState(0);
+    const [audio, setAudio] = useState(new Audio.Sound())
 
-    const doa = require('../../../assets/audio/Iftitah.m4a');
+    // useEffect
+    React.useEffect(() => {
+
+        return () => {
+            UnloadAudio();
+
+        };
+    }, [isFocused]);
+
 
     React.useEffect(() => {
-        LoadAudio();
-        video.current.playAsync()
-    }, []);
+        async function loadingAssets() {
+            setVideoPath(videoPaths[id - 1]);
+            await LoadAudio(audioPaths[id - 1]);
+        }
+        setNumberId(data.id);
+        loadingAssets();
+        console.log("ID : ")
+        console.log(videoState)
+    }, [id]);
+
+
+
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [finish, setFinish] = useState(false);
+    const [duration, setDuration] = useState(0);
+    const [position, setPosition] = useState(0);
+    const [isLoaded, setIsLoaded] = useState(false);
+    // UTILS
+    const onPlaybackStatusUpdate = (status) => {
+        if (status.didJustFinish) {
+            StopSound();
+        }
+        setIsPlaying(status.isPlaying);
+        setDuration(status.durationMillis);
+        setPosition(status.positionMillis);
+        setFinish(status.didJustFinish);
+        setIsLoaded(status.isLoaded);
+
+    }
+
+    const LoadAudio = async (link) => {
+
+        try {
+            const { sound } = await Audio.Sound.createAsync(link, {}, onPlaybackStatusUpdate);
+            setIsLoaded(true);
+            setAudio(sound);
+        } catch (error) {
+            SetLoading(false);
+        }
+
+    };
 
     const PlayAudio = async () => {
         try {
-            const result = await sound.current.getStatusAsync();
-            if (result.isLoaded) {
-                if (result.isPlaying === false) {
-                    sound.current.playAsync();
+            if (isLoaded) {
+                if (isPlaying === false) {
+                    await video.current.playAsync()
+                    audio.playAsync();
                     setIsPlaying(true);
                 }
             }
@@ -40,69 +140,49 @@ export default function praktek() {
 
     const PauseAudio = async () => {
         try {
-            const result = await sound.current.getStatusAsync();
-            if (result.isLoaded) {
-                if (result.isPlaying === true) {
-                    sound.current.pauseAsync();
-                    setIsPlaying(false);
-                }
+            if (isLoaded) {
+                await audio.pauseAsync();
+                await video.current.pauseAsync();
+                setIsPlaying(false);
             }
         } catch (error) { }
     };
     const StopSound = async () => {
-        try {
-            const result = await sound.current.getStatusAsync();
-            if (result.isLoaded) {
-                if (result.isPlaying === true) {
-                    sound.current.stopAsync();
-                    setIsPlaying(false);
-                }
-            }
-        } catch (error) { }
-    };
-    const exitSound = async () => {
-        try {
-            sound.current.stopAsync();
+        if (isLoaded) {
+            await audio.stopAsync();
+            await video.current.stopAsync();
             setIsPlaying(false);
-        } catch (error) { }
-    };
-    const LoadAudio = async () => {
-        SetLoading(true);
-        const checkLoading = await sound.current.getStatusAsync();
-        if (checkLoading.isLoaded === false) {
-            try {
-                const result = await sound.current.loadAsync(doa, {}, true);
-                if (result.isLoaded === false) {
-                    SetLoading(false);
-                    console.log('Error in Loading Audio');
-                } else {
-                    SetLoading(false);
-                    SetLoaded(true);
-                }
-            } catch (error) {
-                console.log(error);
-                SetLoading(false);
-            }
-        } else {
-            SetLoading(false);
         }
     };
+    
+    const UnloadAudio = async () => {
+        try {
+            if (isLoaded) {
+                await audio.unloadAsync();
+                await video.current.unloadAsync();
+                SetLoaded(false);
+                SetLoading(false);
+            }
+        } catch (error) {
+        }
+    }
 
-
-    const { id } = useLocalSearchParams();
-    const data = rukunData.find((item) => item.id === id);
     const [isPreloading, setIsPreloading] = React.useState(false);
+    const [isShowTerjemahan, setIsShowTerjemahan] = React.useState(false);
+    const toggleTerjemahan = () => {
+        setIsShowTerjemahan(!isShowTerjemahan);
+    }
     return (<>
         <Stack.Screen
             options={{
                 headerTitle: data.nama,
                 headerTransparent: false,
                 headerTintColor: '#fff',
-                headerStyle: {  
-                    backgroundColor:'#1e2f97',
+                headerStyle: {
+                    backgroundColor: '#1e2f97',
                     flex: 1,
                     justifyContent: 'center',
-                    alignItems : 'center'
+                    alignItems: 'center'
                 },
                 headerTitleStyle: {
                     fontFamily: 'poppins_bold',
@@ -114,25 +194,24 @@ export default function praktek() {
             <View style={styles.center}>
 
 
-                    {isPreloading &&
-                        <ActivityIndicator
-                            animating
-                            color={"gray"}
-                            size="large"
-                            style={{ flex: 1, position:"absolute", top:"50%", left:"45%" }}
-                        />
-        }
-                    <Video
-                        ref={video}
-                        style={styles.video}
-                        source={require('../../../assets/video/Takbir.mp4')}
-                        onLoadStart={() => setIsPreloading(true)}
-                        onReadyForDisplay={() => setIsPreloading(false)}
-                        resizeMode={ResizeMode.COVER}
-                        isLooping
-                        onPlaybackStatusUpdate={status => setStatus(() => status)}
+                {isPreloading &&
+                    <ActivityIndicator
+                        animating
+                        color={"gray"}
+                        size="large"
+                        style={{ flex: 1, position: "absolute", top: "50%", left: "45%" }}
                     />
-                    {/* <View style={styles.buttons}>
+                }
+                <Video
+                    ref={video}
+                    style={styles.video}
+                    source={videoPaths[id-1]}
+                    onLoadStart={() => setIsPreloading(true)}
+                    onReadyForDisplay={() => setIsPreloading(false)}
+                    resizeMode={ResizeMode.COVER}
+                    onPlaybackStatusUpdate={status => setStatus(() => status)}
+                />
+                {/* <View style={styles.buttons}>
                         <Button
                             title={status.isPlaying ? 'Pause' : 'Play'}
                             onPress={() =>
@@ -141,70 +220,82 @@ export default function praktek() {
                         />
                     </View> */}
                 <View style={styles.kartu}>
-                        {data.repetisi > 0 && (<>
-                    <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:"flex-start"}}>
-                        
-                        <Text style={[styles.title_label, styles.title]}>Bacaan :</Text>
-                        {!isPlaying ? (
+                    {data.repetisi > 0 && (<>
+                        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: "flex-start" }}>
 
-                            <View style={styles.audioWrapper}>
+                            <Text style={[styles.title_label, styles.title]}>Bacaan :</Text>
+                            {!isPlaying ? (
+
+                                <View style={styles.audioWrapper}>
+                                    <TouchableOpacity
+                                        onPress={PlayAudio}
+                                        style={{ backgroundColor: '#36cc00', padding: 6, borderRadius: 50 }}
+                                    >
+                                        <AntDesign name="caretright" size={18} color="white" />
+                                    </TouchableOpacity>
+                                </View>
+                            ) : (<View style={[styles.audioWrapper, { gap: 5 }]}>
                                 <TouchableOpacity
-                                    onPress={PlayAudio}
-                                    style={{ backgroundColor: '#36cc00', padding: 6, borderRadius: 50 }}
+                                    title="Stop"
+                                    onPress={StopSound}
+                                    style={{ backgroundColor: 'red', padding: 6, borderRadius: 50 }}
                                 >
-                                    <AntDesign name="caretright" size={18} color="white" />
+                                    <Entypo name="controller-stop" size={18} color="white" />
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    title="Pause"
+                                    onPress={PauseAudio}
+                                    style={{ backgroundColor: 'brown', padding: 6, borderRadius: 50 }}
+                                >
+                                    <AntDesign name="pause" size={18} color="white" />
                                 </TouchableOpacity>
                             </View>
-                        ) : (<View style={[styles.audioWrapper, { gap: 5 }]}>
-                            <TouchableOpacity
-                                title="Stop"
-                                onPress={StopSound}
-                                style={{ backgroundColor: 'red', padding: 6, borderRadius: 50 }}
-                            >
-                                <Entypo name="controller-stop" size={18} color="white" />
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                title="Pause"
-                                onPress={PauseAudio}
-                                style={{ backgroundColor: 'brown', padding: 6, borderRadius: 50 }}
-                            >
-                                <AntDesign name="pause" size={18} color="white" />
-                            </TouchableOpacity>
+                            )}
                         </View>
-                        )}
-                    </View>
-                        </>)}
+                    </>)}
                     {data.repetisi > 0 && (
                         <>
-                        <Text style={[styles.title_doa, styles.title]}>{data.doa}</Text>
-    
-                        <Text style={[styles.title_label, styles.title]}>Terjemahan : </Text>
-                        <Text style={[styles.title_terjemah, styles.title]}>{data.terjemahan}</Text>
-                        {data.repetisi > 1 && (
-                            <Text style={[styles.title_repetisi, styles.title]}>Diulang sebanyak {data.repetisi}x</Text>
-                        )}
+                            <Text style={[styles.title_doa, styles.title]}>{data.doa}</Text>
+
+                            <Text onPress={toggleTerjemahan} style={[styles.title_terjemah, styles.title, { fontWeight: 'bold' }]}>
+                                {!isShowTerjemahan && (
+                                    <Text style={[styles.title, { fontWeight: 'bold' }]}>
+                                        Lihat Terjemahan </Text>)}
+                                {isShowTerjemahan && (
+                                    <Text style={[styles.title, { fontWeight: 'bold' }]}>
+                                        Tutup Terjemahan </Text>)}
+                            </Text>
+                            {isShowTerjemahan && (
+                                <Text style={[styles.title_terjemah, styles.title]}>{data.terjemahan}</Text>
+                            )}
+                            {data.repetisi > 1 && (
+                                <Text style={[styles.title_repetisi, styles.title]}>Diulang sebanyak {data.repetisi}x</Text>
+                            )}
+                            {data.repetisi > 1 && (
+                                <Text style={[styles.title_repetisi, styles.title]}>Diulang sebanyak {data.repetisi}x</Text>
+                            )}
                         </>
-                    ) }
+                    )}
                     {data.repetisi < 1 && (
                         <>
-                        <Text style={[styles.title_label, styles.title]}>{data.nama}</Text>
-                        <Text style={[styles.title_terjemah, styles.title]}>{data.doa}</Text>
-                       
+                            <Text style={[styles.title_label, styles.title]}>{data.nama}</Text>
+                            <Text style={[styles.title_terjemah, styles.title]}>{data.doa}</Text>
+
                         </>
-                    ) }
+                    )}
                 </View>
 
             </View>
         </ScrollView>
         <View style={styles.buttonWrapper}>
             {data.id > 1 && (
-                <TouchableOpacity onPress={() => { exitSound(); navigation.navigate("[id]", { id: data.id - 1 }) }} style={styles.button}>
+                <TouchableOpacity onPress={async () => { await UnloadAudio(); navigation.navigate("[id]", { id: data.id - 1 }) }} style={styles.button}>
                     <Text style={styles.textCenter}>Previous</Text>
                 </TouchableOpacity>
             )}
 
             {data.id < 9 && (
-                <TouchableOpacity onPress={() => { exitSound(); navigation.navigate("[id]", { id: data.id + 1 }) }} style={styles.button}>
+                <TouchableOpacity onPress={async () => { await UnloadAudio(); navigation.navigate("[id]", { id: data.id + 1 }) }} style={styles.button}>
                     <Text style={styles.textCenter}>Next</Text>
                 </TouchableOpacity>
             )}
@@ -222,7 +313,7 @@ const styles = StyleSheet.create({
     title: { color: 'white' },
     title_label: { fontSize: 20, fontWeight: 'bold', textAlign: 'left' },
     asset: { width: '100%', minHeight: 500 },
-    audioWrapper: { flexDirection: 'row', gap: 5, width: '100%', paddingStart:10 },
+    audioWrapper: { flexDirection: 'row', gap: 5, width: '100%', paddingStart: 10 },
     buttonWrapper: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -233,13 +324,13 @@ const styles = StyleSheet.create({
         right: 0,
         paddingHorizontal: 30, // Adjust as needed
         paddingVertical: 16, // Adjust as needed
-        borderTopWidth:1,
+        borderTopWidth: 1,
         borderTopColor: '#fff',
-        elevation:10,
+        elevation: 10,
         shadowColor: '#fff',
         shadowOpacity: 0.5,
         shadowRadius: 10,
-        shadowOffset: {height:10},
+        shadowOffset: { height: 10 },
 
     },
     button: {
@@ -265,7 +356,13 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 420,
     },
-    title_repetisi : {fontSize: 14, fontFamily:'poppins_bold', marginTop: 8},
-    title_terjemah : {textAlign:'justify', fontSize: 16, fontFamily:'poppins_regular', marginTop:2}
+    title_repetisi: { fontSize: 14, fontFamily: 'poppins_bold', marginTop: 8 },
+    title_terjemah: { textAlign: 'justify', fontSize: 16, fontFamily: 'poppins_regular', marginTop: 2 }
 
 })
+
+
+
+
+
+

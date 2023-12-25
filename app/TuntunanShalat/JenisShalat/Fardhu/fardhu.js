@@ -28,8 +28,8 @@ const sunnah = () => {
             }}
         />
                 <ImageBackground
-                    source={require('../../../../assets/images/bg_opening.png')}
-                    style={styles.bg_opening}
+                    source={require('../../../../assets/images/bgOpening.png')}
+                    style={styles.bgOpening}
                     >
                 </ImageBackground>
                 
@@ -50,7 +50,7 @@ const sunnah = () => {
 }
 const styles = StyleSheet.create({
     container: {marginTop: 0, top: 0, paddingTop: 0, width:'100%' },
-    bg_opening: {
+    bgOpening: {
         width: '150%',
         height: "150%",
         marginTop: 0,

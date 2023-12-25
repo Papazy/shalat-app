@@ -8,6 +8,7 @@
       "expo-router"
     ],
     "name": "shalat-app",
+    "icon": "./assets/images/icon.png",
     "slug": "shalat-app",
     "extra": {
       "router": {
@@ -18,7 +19,11 @@
       }
     },
     "android": {
-      "package": "com.fajry.shalatapp"
+      "package": "com.fajry.shalatapp",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
     },
     "runtimeVersion": {
       "policy": "appVersion"

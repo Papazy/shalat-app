@@ -26,8 +26,8 @@ export default function page(){
             }}/>
             <SafeAreaView style={styles.container}>
                 <ImageBackground
-                    source={require('../../../../assets/images/bg_opening.png')}
-                    style={styles.bg_opening}
+                    source={require('../../../../assets/images/bgOpening.png')}
+                    style={styles.bgOpening}
                     >
                 </ImageBackground>
                 {/* <View style={styles.header}>
@@ -61,7 +61,8 @@ export default function page(){
                                 </TouchableOpacity>
                             </View>
 
-                        
+                        <View style={{paddingBottom:'10%'}}></View>
+                        <Text style={styles.kartu_id}>@2023</Text>
                     </View>
                 </ScrollView>
             </SafeAreaView>
@@ -72,7 +73,7 @@ export default function page(){
 
 const styles = StyleSheet.create({
     container: {marginTop: 0, top: 0, paddingTop: 0, width:'100%' },
-    bg_opening: {
+    bgOpening: {
         width: '150%',
         height: "150%",
         marginTop: 0,
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
     text_atas: {
         fontSize: 40,
         marginBottom: 40,
-        paddingBottom: 0,
+        paddingBottom: 20,
         marginTop: 0,
         color: '#3f1651',
         fontWeight:'700'

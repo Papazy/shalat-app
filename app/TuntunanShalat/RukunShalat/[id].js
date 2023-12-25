@@ -43,8 +43,8 @@ export default function rukun() {
             }}
         />
             <ImageBackground
-                source={require('../../../assets/images/bg_opening.png')}
-                style={styles.bg_opening}
+                source={require('../../../assets/images/bgOpening.png')}
+                style={styles.bgOpening}
             >
             </ImageBackground>
             <ScrollView style={{width:'100%', height:'100%', paddingTop:"10%", }}>
@@ -86,7 +86,7 @@ export default function rukun() {
 
 const styles = StyleSheet.create({
     center: { flex: 1,padding: 20, alignItems: 'center', justifyContent: 'center', width: '100%',  },
-    bg_opening: {
+    bgOpening: {
         position: 'absolute',
         height: '120%',
         width: '120%',

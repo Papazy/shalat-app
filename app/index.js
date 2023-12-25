@@ -20,8 +20,8 @@ const Home = () => {
         <>
             <SafeAreaView style={styles.container}> 
                 <ImageBackground 
-                source={require('../assets/images/bg_opening.png') }
-                style={styles.bg_opening}
+                source={require('../assets/images/bgOpening.png') }
+                style={styles.bgOpening}
                 >
                 </ImageBackground>
                 <Image
@@ -47,19 +47,6 @@ const Home = () => {
 
 
 const styles = StyleSheet.create({
-    container : {flex:1, alignItems:'center', width:'100%'},
-    bg_opening : {
-        position:'absolute',
-        height:'100%',
-        width: '100%',
-        top:-200    
-    },
-    text: {textAlign:'center',
-    fontFamily:'poppins_bold', 
-    color:'white',textShadowColor:'black', textShadowOffset:{width:5,height:2}, textShadowRadius:10},
-    text_atas : { fontSize:40, marginBottom:0, paddingBottom:0, lineHeight:50},
-    text_bawah : { fontSize:70, marginTop:0 , paddingTop:0, lineHeight:80},
-    img_opening: {marginTop:50},
     button : {
         position: "absolute",
         bottom:'18%',
@@ -74,6 +61,19 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         shadowOpacity: 60
     },
+    container : {flex:1, alignItems:'center', width:'100%'},
+    bgOpening : {
+        position:'absolute',
+        height:'100%',
+        width: '100%',
+        top:-200    
+    },
+    text: {textAlign:'center',
+    fontFamily:'poppins_bold', 
+    color:'white',textShadowColor:'black', textShadowOffset:{width:5,height:2}, textShadowRadius:10},
+    text_atas : { fontSize:40, marginBottom:0, paddingBottom:0, lineHeight:50},
+    text_bawah : { fontSize:70, marginTop:0 , paddingTop:0, lineHeight:80},
+    img_opening: {marginTop:50},
     buttonText : {
         color:'black',
         fontSize:20,

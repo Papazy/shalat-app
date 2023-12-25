@@ -35,8 +35,8 @@ const rukunShalat = () => {
                 },
             }}/>
                 <ImageBackground
-                    source={require('../../../assets/images/bg_opening.png')}
-                    style={styles.bg_opening}
+                    source={require('../../../assets/images/bgOpening.png')}
+                    style={styles.bgOpening}
                 >
                 </ImageBackground>
                     
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         fontFamily:'poppins_regular'
     },
     container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-    bg_opening: {
+    bgOpening: {
         position: 'absolute',
         height: '200%',
         width: '120%',
