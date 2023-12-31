@@ -6,7 +6,8 @@
       "terjemahan": "Aku berniat untuk shalat fardhu subuh dua rakaat menghadap kiblat dengan ikhlas karena Allah Ta'ala.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/niat.m4a",
-      "linkVideo" : "niat.mp4"
+      "linkVideo" : "niat.mp4",
+      "catatan" : ""
     },
     {
       "id": 2,
@@ -15,7 +16,8 @@
       "terjemahan": "Allah Maha Besar.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/Takbir.m4a",
-      "linkVideo" : "takbiratulIhram.mp4"
+      "linkVideo" : "takbiratulIhram.mp4",
+      "catatan" : ""
     },
     {
       "id": 3,
@@ -24,7 +26,8 @@
       "terjemahan": "Allah Maha Besar dengan sebesar-besarnya, segala puji bagi Allah dengan pujian yang banyak. Maha Suci Allah pada waktu pagi dan petang. Sesungguhnya aku hadapkan wajahku kepada Allah yang telah menciptakan langit dan bumi dengan segenap kepatuhan atau dalam keadaan tunduk, dan aku bukanlah dari golongan orang-orang yang menyekutukan-Nya. Sesungguhnya sholatku, ibadahku, hidup dan matiku hanyalah untuk Allah Tuhan Semesta Alam, yang tidak ada sekutu bagi-Nya. Dengan yang demikian itulah aku diperintahkan. Dan aku adalah termasuk orang-orang muslim.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/",
-      "linkVideo" : "berdiri.mp4"
+      "linkVideo" : "berdiri.mp4",
+      "catatan" : ""
     },
     {
       "id": 4,
@@ -33,7 +36,8 @@
       "terjemahan": "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam. Maha Pengasih lagi Maha Penyayang. Penguasa di hari pembalasan. Hanya kepada Engkau kami menyembah dan hanya kepada Engkau kami mohon pertolongan. Tunjukkalah kami jalan yang lurus, jalan orang-orang yang telah Engkau beri nikmat, bukan jalan orang-orang yang dimurkai dan bukan pula jalan orang-orang sesat.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/iftitah.m4a",
-      "linkVideo" : "alfatihah.mp4"
+      "linkVideo" : "alfatihah.mp4",
+      "catatan" : ""
     },
     {
       "id": 5,
@@ -42,7 +46,8 @@
       "terjemahan": "Maha Suci Tuhanku yang Maha Agung.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/Rukuk.m4a",
-      "linkVideo" : "ruku.mp4"
+      "linkVideo" : "ruku.mp4",
+      "catatan" : ""
     },
     {
       "id": 6,
@@ -51,7 +56,8 @@
       "terjemahan": "Allah Maha Besar.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/itidal.m4a",
-      "linkVideo" : "itidal.mp4"
+      "linkVideo" : "itidal.mp4",
+      "catatan" : ""
     },
     {
       "id": 7,
@@ -60,7 +66,8 @@
       "terjemahan": "Allah mendengar orang yang memuji-Nya.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/itidal.m4a",
-      "linkVideo" : "itidal.mp4"
+      "linkVideo" : "itidal.mp4",
+      "catatan" : ""
     },
     {
       "id": 8,
@@ -69,7 +76,8 @@
       "terjemahan": "Allah mendengar orang yang memuji-Nya.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/itidal.m4a",
-      "linkVideo" : "itidal.mp4"
+      "linkVideo" : "itidal.mp4",
+      "catatan" : ""
     },
     {
       "id": 9,
@@ -78,114 +86,138 @@
       "terjemahan": "Allah mendengar orang yang memuji-Nya.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/itidal.m4a",
-      "linkVideo" : "itidal.mp4"
+      "linkVideo" : "itidal.mp4",
+      "catatan" : ""
     },
     {
       "id": 10,
+      "nama": "Qunut (subuh)",
+      "doa": "اللَّهُمَّ اهْدِنِي فِيْمَنْ هَدَيْتَ، وَعَافِنِي فِيْمَنْ عَافَيْتَ، وَتَوَلَّنِي فِيْمَنُ تَوَلَّيْتَ، وَبَارِكْ لِي فِيْمَا أَعْطَيْتَ، وَقِنِي بِرَحْمَتِكَ شَرَّمَا قَضَيْتَ، فَإِنَّكَ تَقْضِي وَلَا يُقْضَى عَلَيْكَ، وَإِنَّهُ لَا يَذِلُّ مَنْ وَالَيْتَ، وَلَا يَعِزُّ مَنْ عَادَيْتَ ، تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ ، فَلَكَ الْحَمْدُ عَلَى مَا قَضَيْتَ، أَسْتَغْفِرُكَ وَأَتُوْبُ إِلَيْكَ، وَصَلَّى اللَّهُ عَلَى سَيِّدِنَا مُحَمَّدٍ النَّبِيِّ الْأُمّي وَعَلَى آلِهِ وَصَحْبِهِ وَ سَلَّم",
+      "terjemahan": "Ya Allah, berikanlah aku petunjuk seperti orang-orang telah Engkau beri petunjuk. Berilah aku kesehatan, seperti orang-orang yang telah Engkau beri kesehatan. Pimpinlah aku bersama orang-orang yang telah Engkau pimpin. Limpahkanlah keberkahan kepada apa saja yang telah Engkau berikan kepadaku. Peliharalah aku dengan kasih sayang-Mu dari segala keburukan apa-apa yang telah Engkau putuskan (tetapkan), karena sesungguhnya Engkau-lah yang memberikan ketentuan dan tidak ada yang bisa memberikan ketentuan (keputusan) atas diri-Mu. Sesungguhnya tidaklah akan hina orang-orang yang telah Engkau berikan kekuasaan, dan tidaklah akan mulia orang yang telah Engkau musuhi, Maha Berkah lah Engkau dan Maha Luhur lah Engkau. Segala puji bagi-Mu atas apa yang telah Engkau tetapkan. Aku mohon ampun dan bertobat kepada-Mu. Dan semoga Allah memberikan rahmat dan keselamatan (sholawat) atas diri junjungan kami. Nabi Muhammad, dan juga atas keluarga dan para sahabatnya.",
+      "repetisi": 1,
+      "linkAudio" : "../../../assets/audio/itidal.m4a",
+      "linkVideo" : "itidal.mp4",
+      "catatan" : "Dilakukan hanya pada shalat subuh"
+     
+    },
+    {
+      "id": 11,
       "nama": "Takbir",
       "doa": "اللَّهُ أَكْبَرُ",
       "terjemahan": "Allah Maha Besar.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/sujud.m4a",
-      "linkVideo" : "sujud.mp4"
+      "linkVideo" : "sujud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 11,
+      "id": 12,
       "nama": "Sujud",
       "doa": "سُبْحَانَ رَبِّيَ الْأَعْلَىَ وَبِحَمْدِهِ",
       "terjemahan": "Maha Suci Tuhanku yang Maha Tinggi.",
       "repetisi": 3,
       "linkAudio" : "../../../assets/audio/sujud.m4a",
-      "linkVideo" : "sujud.mp4"
+      "linkVideo" : "sujud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 12,
+      "id": 13,
       "nama": "Takbir",
       "doa": "اللَّهُ أَكْبَرُ",
       "terjemahan": "Allah Maha Besar.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/sujud.m4a",
-      "linkVideo" : "sujud.mp4"
+      "linkVideo" : "sujud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 13,
+      "id": 14,
       "nama": "Duduk di antara Dua Sujud",
       "doa": "رَبِّ اغْفِرْ لِيْ وَارْحَمْنِي وَاجْبُرْنِي وارْفَعْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي",
       "terjemahan": "Ya Tuhanku, ampunilah aku dan rahmatilah aku, maafkanlah aku, dan berilah aku karunia dan rezeki.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/dudukSujud.m4a",
-      "linkVideo" : "dudukSujud.mp4"
+      "linkVideo" : "dudukSujud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 14,
+      "id": 15,
       "nama": "Takbir",
       "doa": "اللَّهُ أَكْبَرُ",
       "terjemahan": "Allah Maha Besar.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/sujud.m4a",
-      "linkVideo" : "sujud.mp4"
+      "linkVideo" : "sujud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 15,
+      "id": 16,
       "nama": "Sujud",
       "doa": "سُبْحَانَ رَبِّيَ الْأَعْلَىَ وَبِحَمْدِهِ",
       "terjemahan": "Maha Suci Tuhanku yang Maha Tinggi.",
       "repetisi": 3,
       "linkAudio" : "../../../assets/audio/sujud.m4a",
-      "linkVideo" : "sujud.mp4"
+      "linkVideo" : "sujud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 16,
+      "id": 17,
       "nama": "Takbir",
       "doa": "اللَّهُ أَكْبَرُ",
       "terjemahan": "Allah Maha Besar.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/sujud.m4a",
-      "linkVideo" : "sujud.mp4"
+      "linkVideo" : "sujud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 17,
+      "id": 18,
       "nama": "Duduk Tasyahud Awal",
       "doa": "Duduk Tasyahud akhir (tawarruk) adalah duduk dengan menegakkan kaki kanan dan menghamparkan kaki kiri ke depan (di bawah kaki kanan), dan duduknya di atas tanah/lantai.",
       "terjemahan": "",
       "repetisi": 0,
       "linkAudio" : "../../../assets/audio/",
-      "linkVideo" : "dudukTasyahud.mp4"
+      "linkVideo" : "dudukTasyahud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 18,
+      "id": 19,
       "nama": "Duduk Tasyahud Akhir",
       "doa": "Duduk Tasyahud akhir (tawarruk) adalah duduk dengan menegakkan kaki kanan dan menghamparkan kaki kiri ke depan (di bawah kaki kanan), dan duduknya di atas tanah/lantai.",
       "terjemahan": "",
       "repetisi": 0,
       "linkAudio" : "../../../assets/audio/",
-      "linkVideo" : "dudukTasyahud.mp4"
+      "linkVideo" : "dudukTasyahud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 19,
+      "id": 20,
       "nama": "Membaca Tasyahud",
       "doa":"التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِىُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ , أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",       
       "terjemahan": "Segala puji bagi Allah, shalawat dan salam semoga terlimpah kepada Rasulullah, aku bersaksi bahwa tidak ada ilah yang berhak disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/Tasyahud.m4a",
-      "linkVideo" : "tasyahud.mp4"
+      "linkVideo" : "tasyahud.mp4",
+      "catatan" : ""
     },
     {
-      "id": 20,
+      "id": 21,
       "nama": "Shalawat",
       "doa": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ ، وَعَلَى آلِ مُحَمَّدٍوَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ ، وَعَلَى آلِ مُحَمَّدٍ ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ ، وَعَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِيدٌ",
       "terjemahan": "Segala puji bagi Allah, shalawat dan salam semoga terlimpah kepada Rasulullah, aku bersaksi bahwa tidak ada ilah yang berhak disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/shalawat.m4a",
-      "linkVideo" : "shalawat.mp4"
+      "linkVideo" : "shalawat.mp4",
+      "catatan" : ""
     },
     {
-      "id": 21,
+      "id": 22,
       "nama": "Salam",
       "doa": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ",
       "terjemahan": "Semoga keselamatan, rahmat, dan berkah Allah terlimpah kepadamu.",
       "repetisi": 1,
       "linkAudio" : "../../../assets/audio/Salam.m4a",
-      "linkVideo" : "salam.mp4"
+      "linkVideo" : "salam.mp4",
+      "catatan" : ""
     }
   ]

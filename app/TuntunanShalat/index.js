@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         top: -400
     },
     text: { textAlign: 'center',
-    //  fontFamily: 'poppins-bold', 
+     fontFamily: 'poppins-bold', 
      color: 'white', textShadowColor: 'black', textShadowOffset: { width: 5, height: 2 }, textShadowRadius: 10 },
     text_atas: {
         fontSize: 40,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'black',
         fontSize: 20,
-        // fontFamily: 'poppins-regular',
+        fontFamily: 'poppins-regular',
         color: 'white'
     },
     text_subtitle: {

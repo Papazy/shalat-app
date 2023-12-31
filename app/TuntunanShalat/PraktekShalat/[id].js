@@ -1,4 +1,4 @@
-import { Text, View, SafeAreaView, Image, StyleSheet, TouchableOpacity, Button, ScrollView, ActivityIndicator } from "react-native";
+import { Text, View, SafeAreaView, Image, StyleSheet, TouchableOpacity, Button, ScrollView, ActivityIndicator, AppState } from "react-native";
 import { useNavigation, Stack, useIsFocuse } from 'expo-router'
 import { useIsFocused } from '@react-navigation/native';
 
@@ -20,20 +20,21 @@ const audioPaths = [
     require("../../../assets/audio/suratpendek.m4a"), // 5
     require("../../../assets/audio/takbir.m4a"), // 6
     require("../../../assets/audio/rukuk.m4a"), // 7
-    require("../../../assets/audio/bangunRukuk.m4a"), // 8
-    require("../../../assets/audio/itidal.m4a"), // 9
-    require("../../../assets/audio/takbir.m4a"), // 10
-    require("../../../assets/audio/sujud.m4a"), // 11
-    require("../../../assets/audio/takbir.m4a"), // 12
-    require("../../../assets/audio/dudukSujud.m4a"), // 13
-    require("../../../assets/audio/takbir.m4a"), // 14
-    require("../../../assets/audio/sujud.m4a"),// 15
-    require("../../../assets/audio/takbir.m4a"), // 16
-    "", // !!! duduk tasyahud Awal 17
-    "", // !!! duduk tasyahud Akhir 18
-    require("../../../assets/audio/tasyahud.m4a"),// 19
-    require("../../../assets/audio/shalawat.m4a"), // 20
-    require("../../../assets/audio/salam.m4a"), // 21
+    require("../../../assets/audio/itidal.m4a"), // 9 // terbalik
+    require("../../../assets/audio/bangunRukuk.m4a"), // 8 // terbalik
+    require("../../../assets/audio/qunut.m4a"), // 10 // terbalik
+    require("../../../assets/audio/takbir.m4a"), // 11
+    require("../../../assets/audio/sujud.m4a"), // 12
+    require("../../../assets/audio/takbir.m4a"), // 13
+    require("../../../assets/audio/dudukSujud.m4a"), // 14
+    require("../../../assets/audio/takbir.m4a"), // 15
+    require("../../../assets/audio/sujud.m4a"),// 16
+    require("../../../assets/audio/takbir.m4a"), // 17
+    "", // !!! duduk tasyahud Awal 18
+    "", // !!! duduk tasyahud Akhir 19
+    require("../../../assets/audio/tasyahud.m4a"),// 20
+    require("../../../assets/audio/shalawat.m4a"), // 21
+    require("../../../assets/audio/salam.m4a"), // 22
 ];
 const videoPaths = [
     require('../../../assets/video/1.mp4'),
@@ -57,10 +58,14 @@ const videoPaths = [
     require('../../../assets/video/19.mp4'),
     require('../../../assets/video/20.mp4'),
     require('../../../assets/video/21.mp4'),
+    require('../../../assets/video/22.mp4'),
 ];
 
 
 export default function praktek() {
+
+    const [active, setActive] = useState();
+
     const [videoState, setVideoPath] = useState('');
     const { id } = useLocalSearchParams();
     const data = rukunData.find((item) => item.id === id);
@@ -70,28 +75,28 @@ export default function praktek() {
     const [Loading, SetLoading] = React.useState(false);
     const [status, setStatus] = React.useState({});
     const video = React.useRef(null);
-    const [numberId, setNumberId] = useState(0);
     const [audio, setAudio] = useState(new Audio.Sound())
 
     // useEffect
-    React.useEffect(() => {
-
+    useEffect(()=>{
+        
         return () => {
             UnloadAudio();
+        }
+    })
 
-        };
-    }, [isFocused]);
 
-
-    React.useEffect(() => {
+    useEffect(() => {
         async function loadingAssets() {
             setVideoPath(videoPaths[id - 1]);
             await LoadAudio(audioPaths[id - 1]);
         }
-        setNumberId(data.id);
         loadingAssets();
-        console.log("ID : ")
-        console.log(videoState)
+    
+        return () => {
+            UnloadAudio();
+
+        };
     }, [id]);
 
 
@@ -125,19 +130,17 @@ export default function praktek() {
         }
 
     };
-
     const PlayAudio = async () => {
         try {
             if (isLoaded) {
                 if (isPlaying === false) {
+                    await audio.playAsync();
                     await video.current.playAsync()
-                    audio.playAsync();
                     setIsPlaying(true);
                 }
             }
         } catch (error) { }
     };
-
     const PauseAudio = async () => {
         try {
             if (isLoaded) {
@@ -158,6 +161,7 @@ export default function praktek() {
     const UnloadAudio = async () => {
         try {
             if (isLoaded) {
+                await StopSound();
                 await audio.unloadAsync();
                 await video.current.unloadAsync();
                 SetLoaded(false);
@@ -211,14 +215,7 @@ export default function praktek() {
                     resizeMode={ResizeMode.COVER}
                     onPlaybackStatusUpdate={status => setStatus(() => status)}
                 />
-                {/* <View style={styles.buttons}>
-                        <Button
-                            title={status.isPlaying ? 'Pause' : 'Play'}
-                            onPress={() =>
-                                status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
-                            }
-                        />
-                    </View> */}
+                
                 <View style={styles.kartu}>
                     {data.repetisi > 0 && (<>
                         <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: "flex-start" }}>
@@ -271,9 +268,7 @@ export default function praktek() {
                             {data.repetisi > 1 && (
                                 <Text style={[styles.title_repetisi, styles.title]}>Diulang sebanyak {data.repetisi}x</Text>
                             )}
-                            {data.repetisi > 1 && (
-                                <Text style={[styles.title_repetisi, styles.title]}>Diulang sebanyak {data.repetisi}x</Text>
-                            )}
+                          
                         </>
                     )}
                     {data.repetisi < 1 && (
@@ -294,7 +289,7 @@ export default function praktek() {
                 </TouchableOpacity>
             )}
 
-            {data.id < 9 && (
+            {data.id < 21 && (
                 <TouchableOpacity onPress={async () => { await UnloadAudio(); navigation.navigate("[id]", { id: data.id + 1 }) }} style={styles.button}>
                     <Text style={styles.textCenter}>Next</Text>
                 </TouchableOpacity>
@@ -307,7 +302,7 @@ export default function praktek() {
 const styles = StyleSheet.create({
     center: { flex: 5, alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'white' },
     kartu: {
-        justifyContent: 'flex-start', backgroundColor: '#1e2f97', width: '100%', paddingVertical: 60, paddingHorizontal: 40, borderTopLeftRadius: 40, minHeight: 70, paddingBottom: 80,
+        justifyContent: 'flex-start', backgroundColor: '#1e2f97', width: '100%', paddingTop: 30, paddingHorizontal: 40, borderTopLeftRadius: 40, minHeight: 40, paddingBottom: 80,
         borderTopRightRadius: 40,
     },
     title: { color: 'white' },
@@ -354,7 +349,9 @@ const styles = StyleSheet.create({
     video: {
         alignSelf: 'center',
         width: '100%',
-        height: 420,
+        height: 530,
+        position: 'relative',  // Set ke 'relative'
+        top: 0,  //
     },
     title_repetisi: { fontSize: 14, fontFamily: 'poppins_bold', marginTop: 8 },
     title_terjemah: { textAlign: 'justify', fontSize: 16, fontFamily: 'poppins_regular', marginTop: 2 }
