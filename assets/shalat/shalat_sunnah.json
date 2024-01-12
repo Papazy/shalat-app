@@ -5,7 +5,8 @@
       "deskripsi": "Sholat Dhuha adalah sholat sunnah yang dilakukan di waktu forenoon setelah matahari telah naik sepenuhnya.",
       "waktu": "Setelah matahari naik hingga sekitar 10-15 menit sebelum waktu Dzuhur.",
       "jumlah_rakaat": 2,
-      "tata_cara": "Sholat Dhuha terdiri dari 2 rakaat. Setiap rakaat terdiri dari dua sujud. Dalam setiap rakaat, membaca surat-surat pendek atau ayat-ayat pilihan setelah Al-Fatihah."
+      "tata_cara": "Sholat Dhuha terdiri dari 2 rakaat. Setiap rakaat terdiri dari dua sujud. Dalam setiap rakaat, membaca surat-surat pendek atau ayat-ayat pilihan setelah Al-Fatihah.",
+      "niat" : "اُصَلِّى سُنَّةَ الضَّحٰى رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ اَدَاءً ِللهِ تَعَالَى"
     },
     {
       "id": 2,
@@ -13,7 +14,8 @@
       "deskripsi": "Sholat Tahajjud adalah sholat sunnah yang dilakukan pada malam hari setelah tidur dan dilakukan secara berjamaah atau perseorangan.",
       "waktu": "Pada malam hari, setelah tidur hingga waktu Subuh.",
       "jumlah_rakaat": "Bebas, umumnya dilakukan dalam jumlah ganjil seperti 1, 3, 5, 7, atau lebih.",
-      "tata_cara": "Sholat Tahajjud dapat dilakukan dalam jumlah rakaat yang bervariasi. Dalam setiap rakaat, membaca surah-surah Al-Qur'an setelah Al-Fatihah dan melakukan sujud yang dalam."
+      "tata_cara": "Sholat Tahajjud dapat dilakukan dalam jumlah rakaat yang bervariasi. Dalam setiap rakaat, membaca surah-surah Al-Qur'an setelah Al-Fatihah dan melakukan sujud yang dalam.",
+      "niat" : "اُصَلِّى سُنَّةً التَّهَجُّدِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ ِللهِ تَعَالَى"
     },
     {
       "id": 3,
@@ -21,7 +23,8 @@
       "deskripsi": "Sholat Istikharah dilakukan untuk memohon petunjuk Allah ketika seseorang menghadapi pilihan atau keputusan penting.",
       "waktu": "Bebas, dapat dilakukan kapan saja kecuali pada waktu yang diharamkan.",
       "jumlah_rakaat": 2,
-      "tata_cara": "Setelah membaca niat Istikharah, membaca surat Al-Fatihah dan surah pendek dalam setiap rakaat. Setelah selesai sholat, berdoa memohon petunjuk Allah untuk memilih yang terbaik."
+      "tata_cara": "Setelah membaca niat Istikharah, membaca surat Al-Fatihah dan surah pendek dalam setiap rakaat. Setelah selesai sholat, berdoa memohon petunjuk Allah untuk memilih yang terbaik.",
+      "niat" : "أُصَلِّيْ سُنَّةَ الْاِسْتِخَارَةِ رَكْعَتَيْنِ لِلّٰهِ تَعَالَى"
     },
     {
       "id": 4,
@@ -29,7 +32,8 @@
       "deskripsi": "Sholat Rawatib adalah sholat sunnah yang dianjurkan untuk dikerjakan secara rutin setiap hari.",
       "waktu": "Bervariasi, dapat dilakukan sebelum atau sesudah sholat fardhu tertentu.",
       "jumlah_rakaat": "Bervariasi, tergantung jenis Rawatib yang dikerjakan.",
-      "tata_cara": "Tata cara Sholat Rawatib bervariasi tergantung jenisnya, tetapi umumnya terdiri dari 2 atau 4 rakaat. Contoh Rawatib adalah sebelum atau sesudah sholat Dhuha, sebelum atau sesudah sholat Dzuhur, dan sebagainya."
+      "tata_cara": "Tata cara Sholat Rawatib bervariasi tergantung jenisnya, tetapi umumnya terdiri dari 2 atau 4 rakaat. Contoh Rawatib adalah sebelum atau sesudah sholat Dhuha, sebelum atau sesudah sholat Dzuhur, dan sebagainya.",
+      "niat" : "أَصَلَّى سُنَّةَ الصُّبْحِ رَكْعَتَيْنِ قَبْلِيَةً لِلَّهِ تَعَالَى"
     },
     {
       "id": 5,
@@ -37,6 +41,7 @@
       "deskripsi": "Sholat Taubah dilakukan sebagai bentuk tobat dan meminta ampunan atas dosa-dosa yang telah dilakukan.",
       "waktu": "Bebas, dapat dilakukan kapan saja.",
       "jumlah_rakaat": 2,
-      "tata_cara": "Setelah niat Taubah, membaca Al-Fatihah dan surat-surat pendek pada setiap rakaat. Setelah selesai sholat, berdoa memohon ampunan dan kesadaran untuk tidak mengulangi dosa."
+      "tata_cara": "Setelah niat Taubah, membaca Al-Fatihah dan surat-surat pendek pada setiap rakaat. Setelah selesai sholat, berdoa memohon ampunan dan kesadaran untuk tidak mengulangi dosa.",
+      "niat" : "أُصَلَّى سُنَّةَ التَّوْبَةِ رَكْعَتَيْنِ لِلَّهِ تَعَالَ"
     }
   ]

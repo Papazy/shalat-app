@@ -3,6 +3,7 @@ import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "re
 import { TouchableOpacity } from "react-native";
 import { useNavigation, Stack } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons';
 
 const index = () => {
 
@@ -14,11 +15,15 @@ const index = () => {
             <Stack.Screen 
                 options={{
                     headerLeft: ()=>(
-                        <TouchableOpacity onPress={() => navigation.navigate('Catatan')} style={{paddingLeft:7, paddingTop:5}}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Catatan')} style={{paddingLeft:10, paddingTop:5}}>
                             <FontAwesome name="pencil-square" size={42} color="white" />
                         </TouchableOpacity>
                         ),
-                    
+                    headerRight: () => (
+                        <TouchableOpacity onPress={() => navigation.navigate('About')} style={{paddingRight:8, paddingTop:5}}>
+                            <Entypo name="info-with-circle" size={38} color="white" />
+                        </TouchableOpacity>
+                    ),
                     headerTransparent: true,
                     headerTitle:''
                 }}

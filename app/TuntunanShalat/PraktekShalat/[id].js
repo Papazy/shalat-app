@@ -1,6 +1,5 @@
 import { Text, View, SafeAreaView, Image, StyleSheet, TouchableOpacity, Button, ScrollView, ActivityIndicator, AppState } from "react-native";
 import { useNavigation, Stack, useIsFocuse } from 'expo-router'
-import { useIsFocused } from '@react-navigation/native';
 
 import { Audio, Video, ResizeMode } from 'expo-av';
 import { useLocalSearchParams } from "expo-router";
@@ -14,27 +13,27 @@ const rukunData = require('../../../assets/shalat/praktik.json')
 
 const audioPaths = [
     require("../../../assets/audio/niatSubuh.m4a"), // 1
-    require("../../../assets/audio/takbir.m4a"), // 2
+    require("../../../assets/audio/kosong/takbir.m4a"), // 2
     require("../../../assets/audio/iftitah.m4a"), // 3
     require("../../../assets/audio/alfatihah.m4a"), // 4
     require("../../../assets/audio/suratpendek.m4a"), // 5
-    require("../../../assets/audio/takbir.m4a"), // 6
+    require("../../../assets/audio/kosong/takbirRukuk.m4a"), // 6
     require("../../../assets/audio/rukuk.m4a"), // 7
-    require("../../../assets/audio/itidal.m4a"), // 9 // terbalik
+    require("../../../assets/audio/kosong/itidal.m4a"), // 9 // terbalik
     require("../../../assets/audio/bangunRukuk.m4a"), // 8 // terbalik
     require("../../../assets/audio/qunut.m4a"), // 10 // terbalik
-    require("../../../assets/audio/takbir.m4a"), // 11
+    require("../../../assets/audio/kosong/takbirSujud.m4a"), // 11
     require("../../../assets/audio/sujud.m4a"), // 12
-    require("../../../assets/audio/takbir.m4a"), // 13
+    require("../../../assets/audio/kosong/takbirDudukSujud.m4a"), // 13
     require("../../../assets/audio/dudukSujud.m4a"), // 14
-    require("../../../assets/audio/takbir.m4a"), // 15
+    require("../../../assets/audio/kosong/takbirSujudKedua.m4a"), // 15
     require("../../../assets/audio/sujud.m4a"),// 16
-    require("../../../assets/audio/takbir.m4a"), // 17
+    require("../../../assets/audio/kosong/takbirTahiyat.m4a"), // 17
     "", // !!! duduk tasyahud Awal 18
     "", // !!! duduk tasyahud Akhir 19
-    require("../../../assets/audio/tasyahud.m4a"),// 20
+    require("../../../assets/audio/kosong/tahiyat.m4a"),// 20
     require("../../../assets/audio/shalawat.m4a"), // 21
-    require("../../../assets/audio/salam.m4a"), // 22
+    require("../../../assets/audio/kosong/salam.m4a"), // 22
 ];
 const videoPaths = [
     require('../../../assets/video/1.mp4'),
@@ -63,27 +62,34 @@ const videoPaths = [
 
 
 export default function praktek() {
+    const navigation = useNavigation();
 
     const [active, setActive] = useState();
 
     const [videoState, setVideoPath] = useState('');
     const { id } = useLocalSearchParams();
     const data = rukunData.find((item) => item.id === id);
-    const navigation = useNavigation();
-    const isFocused = useIsFocused();
-    const [Loaded, SetLoaded] = React.useState(false);
     const [Loading, SetLoading] = React.useState(false);
     const [status, setStatus] = React.useState({});
     const video = React.useRef(null);
     const [audio, setAudio] = useState(new Audio.Sound())
 
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [finish, setFinish] = useState(false);
+    const [duration, setDuration] = useState(0);
+    const [position, setPosition] = useState(0);
+    const [isLoaded, setIsLoaded] = useState(false);
     // useEffect
-    useEffect(()=>{
-        
-        return () => {
-            UnloadAudio();
-        }
-    })
+
+    useEffect(() => {
+        const unsub = navigation.addListener('beforeRemove', async () => {
+            if (isLoaded) {
+                await UnloadAudio();
+            }
+        })
+
+        return unsub;
+    }, [navigation, isLoaded, isPlaying])
 
 
     useEffect(() => {
@@ -92,24 +98,17 @@ export default function praktek() {
             await LoadAudio(audioPaths[id - 1]);
         }
         loadingAssets();
-    
-        return () => {
-            UnloadAudio();
 
-        };
+        return loadingAssets;
     }, [id]);
 
 
 
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [finish, setFinish] = useState(false);
-    const [duration, setDuration] = useState(0);
-    const [position, setPosition] = useState(0);
-    const [isLoaded, setIsLoaded] = useState(false);
     // UTILS
     const onPlaybackStatusUpdate = (status) => {
         if (status.didJustFinish) {
             StopSound();
+            
         }
         setIsPlaying(status.isPlaying);
         setDuration(status.durationMillis);
@@ -143,7 +142,7 @@ export default function praktek() {
     };
     const PauseAudio = async () => {
         try {
-            if (isLoaded) {
+            if (isPlaying) {
                 await audio.pauseAsync();
                 await video.current.pauseAsync();
                 setIsPlaying(false);
@@ -151,20 +150,20 @@ export default function praktek() {
         } catch (error) { }
     };
     const StopSound = async () => {
-        if (isLoaded) {
+        if (isPlaying) {
             await audio.stopAsync();
             await video.current.stopAsync();
             setIsPlaying(false);
         }
     };
-    
+
     const UnloadAudio = async () => {
         try {
             if (isLoaded) {
                 await StopSound();
                 await audio.unloadAsync();
                 await video.current.unloadAsync();
-                SetLoaded(false);
+                setIsLoaded(false);
                 SetLoading(false);
             }
         } catch (error) {
@@ -195,7 +194,7 @@ export default function praktek() {
         />
         <ScrollView>
 
-            <View style={styles.center}>
+            <View style={[styles.center,{position:'relative', top:-40}]}>
 
 
                 {isPreloading &&
@@ -209,14 +208,14 @@ export default function praktek() {
                 <Video
                     ref={video}
                     style={styles.video}
-                    source={videoPaths[id-1]}
+                    source={videoPaths[id - 1]}
                     onLoadStart={() => setIsPreloading(true)}
                     onReadyForDisplay={() => setIsPreloading(false)}
                     resizeMode={ResizeMode.COVER}
                     onPlaybackStatusUpdate={status => setStatus(() => status)}
                 />
-                
-                <View style={styles.kartu}>
+
+                <View style={[styles.kartu,]}>
                     {data.repetisi > 0 && (<>
                         <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: "flex-start" }}>
 
@@ -268,7 +267,7 @@ export default function praktek() {
                             {data.repetisi > 1 && (
                                 <Text style={[styles.title_repetisi, styles.title]}>Diulang sebanyak {data.repetisi}x</Text>
                             )}
-                          
+
                         </>
                     )}
                     {data.repetisi < 1 && (
@@ -289,7 +288,7 @@ export default function praktek() {
                 </TouchableOpacity>
             )}
 
-            {data.id < 21 && (
+            {data.id < 22 && (
                 <TouchableOpacity onPress={async () => { await UnloadAudio(); navigation.navigate("[id]", { id: data.id + 1 }) }} style={styles.button}>
                     <Text style={styles.textCenter}>Next</Text>
                 </TouchableOpacity>
@@ -302,7 +301,14 @@ export default function praktek() {
 const styles = StyleSheet.create({
     center: { flex: 5, alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'white' },
     kartu: {
-        justifyContent: 'flex-start', backgroundColor: '#1e2f97', width: '100%', paddingTop: 30, paddingHorizontal: 40, borderTopLeftRadius: 40, minHeight: 40, paddingBottom: 80,
+        justifyContent: 'flex-start',
+        backgroundColor: '#1e2f97',
+        width: '100%',
+        paddingTop: 30,
+        paddingHorizontal: 40,
+        borderTopLeftRadius: 40,
+        minHeight: 50,
+        paddingBottom: 100,
         borderTopRightRadius: 40,
     },
     title: { color: 'white' },

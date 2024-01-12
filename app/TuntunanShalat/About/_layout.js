@@ -9,11 +9,6 @@ export default function Layout(){
     return (
         <Stack >
             <Stack.Screen name="index"/>
-            <Stack.Screen name="JenisShalat" />
-            <Stack.Screen name="RukunShalat" />
-            <Stack.Screen name="PraktekShalat" />
-            <Stack.Screen name="Catatan" /> 
-            <Stack.Screen name="About" /> 
         </Stack >
     )
 }
