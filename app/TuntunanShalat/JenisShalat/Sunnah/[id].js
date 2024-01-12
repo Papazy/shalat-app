@@ -164,7 +164,7 @@ export default function page() {
                     <View style={{marginTop:10}}></View>
                     <Wajengan/>
                     <View style={{marginTop:10}}></View>
-                    
+                        
                 </ScrollView>
             </SafeAreaView>
         </>

@@ -3,7 +3,7 @@ import { useNavigation, Stack, useIsFocuse } from 'expo-router'
 
 import { Audio, Video, ResizeMode } from 'expo-av';
 import { useLocalSearchParams } from "expo-router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
@@ -74,11 +74,16 @@ export default function praktek() {
     const video = React.useRef(null);
     const [audio, setAudio] = useState(new Audio.Sound())
 
+    const audioRef = React.useRef(new Audio.Sound());
+
     const [isPlaying, setIsPlaying] = useState(false);
     const [finish, setFinish] = useState(false);
     const [duration, setDuration] = useState(0);
     const [position, setPosition] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isPause, setIsPause] = useState(false);
+
+
     // useEffect
 
     useEffect(() => {
@@ -99,31 +104,42 @@ export default function praktek() {
         }
         loadingAssets();
 
-        return loadingAssets;
+        
     }, [id]);
 
 
 
     // UTILS
-    const onPlaybackStatusUpdate = (status) => {
-        if (status.didJustFinish) {
-            StopSound();
-            
-        }
+    const _onPlaybackStatusUpdate = async (status) => {
         setIsPlaying(status.isPlaying);
+
         setDuration(status.durationMillis);
         setPosition(status.positionMillis);
         setFinish(status.didJustFinish);
         setIsLoaded(status.isLoaded);
-
+        if (status.didJustFinish) {
+            await PauseAudio();
+            setIsPause(false);
+        }
+        
+        console.log(status);
     }
 
+    useEffect(()=>{
+        if(audio.didJustFinish){
+            console.log("Sudah Finis");
+            StopSound();
+        }
+    },[audio])
+    
     const LoadAudio = async (link) => {
-
+        
         try {
-            const { sound } = await Audio.Sound.createAsync(link, {}, onPlaybackStatusUpdate);
+            const { sound } = await Audio.Sound.createAsync(link, {}, _onPlaybackStatusUpdate);
             setIsLoaded(true);
             setAudio(sound);
+            audioRef.current = sound;
+            
         } catch (error) {
             SetLoading(false);
         }
@@ -132,11 +148,25 @@ export default function praktek() {
     const PlayAudio = async () => {
         try {
             if (isLoaded) {
-                if (isPlaying === false) {
-                    await audio.playAsync();
-                    await video.current.playAsync()
+                    if(isPause){
+                        await audio.playAsync();
+                        await video.current.playAsync();
+                        setIsPause(false);
+                        setIsPlaying(true);
+                        return;
+                    }
+                    try{
+                        await audio.stopAsync();
+                        await audio.playAsync();
+                    }catch(e){}
+                    try{
+                        await video.current.stopAsync();
+                    }catch(e){};
+                    try{
+                        await video.current.playAsync()
+                    }catch(e){}
                     setIsPlaying(true);
-                }
+                
             }
         } catch (error) { }
     };
@@ -146,15 +176,20 @@ export default function praktek() {
                 await audio.pauseAsync();
                 await video.current.pauseAsync();
                 setIsPlaying(false);
+                setIsPause(true);
             }
         } catch (error) { }
     };
     const StopSound = async () => {
-        if (isPlaying) {
-            await audio.stopAsync();
-            await video.current.stopAsync();
+         
+            try{
+                await audio.stopAsync();
+            }catch(e){}
+            try{
+                await video.current.stopAsync();
+            }catch(e){}
             setIsPlaying(false);
-        }
+        
     };
 
     const UnloadAudio = async () => {
