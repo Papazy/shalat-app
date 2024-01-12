@@ -1,15 +1,17 @@
 [
   {
     "id": 1,
+    "penjelasan" : false,
     "nama": "Niat",
-    "doa": "نَوَيْتُ أُصَلِّي فَرْضَ صَلَاةِ [nama shalat] رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى",
-    "terjemahan": "Aku berniat untuk shalat fardhu [nama shalat] dua rakaat menghadap kiblat dengan ikhlas karena Allah Ta'ala.",
+    "doa": "أُصَلِّى فَرْضَ الصُّبْح رَكَعتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لله تَعَالَى*",
+    "terjemahan": "Aku berniat untuk shalat fardhu subuh dua rakaat menghadap kiblat dengan ikhlas karena Allah Ta'ala.",
     "repetisi": 1,
     "linkAudio" : "../../../assets/audio/niat.m4a",
     "linkVideo" : "niat.mp4"
   },
   {
     "id": 2,
+    "penjelasan" : true,
     "nama": "Berdiri Bagi Yang Mampu",
     "doa": "Saat menjalankan salat, rukun pertama yang harus kita penuhi yaitu berdiri. Di rukun ini ada pengecualian untuk orang-orang yang sudah tidak mampu berdiri, mereka dapat salat dengan duduk atau berbaring.",
     "terjemahan": "",
@@ -19,6 +21,7 @@
   },
   {
     "id": 3,
+    "penjelasan" : false,
     "nama": "Takbiratul Ihram",
     "doa": "اللَّهُ أَكْبَرُ",
     "terjemahan": "Allah Maha Besar.",
@@ -28,6 +31,7 @@
   },
   {
     "id": 4,
+    "penjelasan" : false,
     "nama": "Membaca Surat Al Fatihah",
     "doa": "  بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ .الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ. الرَّحْمَٰنِ الرَّحِيمِ. مَالِكِ يَوْمِ الدِّينِ. إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ. اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ. صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ المَغْضُوبِ عَلَيْهِمْ وَلا الضَّالِّينَ",
     "terjemahan": "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam. Maha Pengasih lagi Maha Penyayang. Penguasa di hari pembalasan. Hanya kepada Engkau kami menyembah dan hanya kepada Engkau kami mohon pertolongan. Tunjukkalah kami jalan yang lurus, jalan orang-orang yang telah Engkau beri nikmat, bukan jalan orang-orang yang dimurkai dan bukan pula jalan orang-orang sesat.",
@@ -37,6 +41,7 @@
   },
   {
     "id": 5,
+    "penjelasan" : false,
     "nama": "Ruku'",
     "doa": "سُبْحَانَ رَبِّيَ الْعَظِيْمِ وَبِحَمْدِه",
     "terjemahan": "Maha Suci Tuhanku yang Maha Agung.",
@@ -46,6 +51,7 @@
   },
   {
     "id": 6,
+    "penjelasan" : false,
     "nama": "I'tidal",
     "doa": "رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَوَاتِ وَمِلْءَ الْأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ",
     "terjemahan": "Allah mendengar orang yang memuji-Nya.",
@@ -55,6 +61,7 @@
   },
   {
     "id": 7,
+    "penjelasan" : false,
     "nama": "Sujud",
     "doa": "سُبْحَانَ رَبِّيَ الْأَعْلَىَ وَبِحَمْدِهِ",
     "terjemahan": "Maha Suci Tuhanku yang Maha Tinggi.",
@@ -64,6 +71,7 @@
   },
   {
     "id": 8,
+    "penjelasan" : false,
     "nama": "Duduk di antara Dua Sujud",
     "doa": "رَبِّ اغْفِرْ لِيْ وَارْحَمْنِي وَاجْبُرْنِي وارْفَعْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي",
     "terjemahan": "Ya Tuhanku, ampunilah aku dan rahmatilah aku, maafkanlah aku, dan berilah aku karunia dan rezeki.",
@@ -73,6 +81,7 @@
   },
   {
     "id": 9,
+    "penjelasan" : true,
     "nama": "Duduk Tasyahud Akhir",
     "doa": "Duduk Tasyahud akhir (tawarruk) adalah duduk dengan menegakkan kaki kanan dan menghamparkan kaki kiri ke depan (di bawah kaki kanan), dan duduknya di atas tanah/lantai.",
     "terjemahan": "",
@@ -82,6 +91,7 @@
   },
   {
     "id": 10,
+    "penjelasan" : false,
     "nama": "Membaca Tasyahud Akhir",
     "doa": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِىُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِالصَّالِحِينَ ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
     "terjemahan": "Segala puji bagi Allah, shalawat dan salam semoga terlimpah kepada Rasulullah, aku bersaksi bahwa tidak ada ilah yang berhak disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
@@ -91,6 +101,7 @@
   },
   {
     "id": 11,
+    "penjelasan" : false,
     "nama": "Shalawat",
     "doa": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ ، كَمَا صَلَّيْتَ عَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِيدٌ ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ ، كَمَا بَارَكْتَ عَلَى آلِ إِبْرَاهِيمَ ، إِنَّكَ حَمِيدٌ مَجِي",
     "terjemahan": "Segala puji bagi Allah, shalawat dan salam semoga terlimpah kepada Rasulullah, aku bersaksi bahwa tidak ada ilah yang berhak disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
@@ -100,6 +111,7 @@
   },
   {
     "id": 12,
+    "penjelasan" : false,
     "nama": "Salam Pertama",
     "doa": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ",
     "terjemahan": "Semoga keselamatan, rahmat, dan berkah Allah terlimpah kepadamu.",
@@ -109,8 +121,9 @@
   },
   {
     "id": 13,
+    "penjelasan" : true,
     "nama": "Tertib",
-    "doa": "Yaitu melakukan shalat atau semua rukun shalat dengan beraturan.",
+    "doa": "Tertib yaitu melakukan shalat atau semua rukun shalat dengan beraturan.",
     "terjemahan": "",
     "repetisi": 0,
     "linkAudio" : "../../../assets/audio/",

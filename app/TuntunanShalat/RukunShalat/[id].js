@@ -42,30 +42,32 @@ export default function rukun() {
                 headerTintColor: 'white',
             }}
         />
-            <ImageBackground
-                source={require('../../../assets/images/bgOpening.png')}
-                style={styles.bgOpening}
-            >
-            </ImageBackground>
-            <ScrollView style={{width:'100%', height:'100%', paddingTop:"10%", }}>
-        <View style={[styles.center, styles.background, {marginBottom:100}]}>
+        <ImageBackground
+            source={require('../../../assets/images/bgOpening.png')}
+            style={styles.bgOpening}
+        >
+        </ImageBackground>
+        <ScrollView style={{ width: '100%', height: '100%', paddingTop: "10%", }}>
+            <View style={[styles.center, styles.background, { marginBottom: 100 }]}>
 
                 <View style={styles.kartu}>
-                    <Text style={[styles.title_doa]}>{data.doa}</Text>
+                    <Text style={data.penjelasan ? [styles.title_penjelasan] : [styles.title_doa] }>{data.doa}</Text>
                     <Text onPress={toggleTerjemahan} style={[styles.title_terjemah, styles.title, { fontWeight: 'bold' }]}>
-                        {!isShowTerjemahan && (
-                            <Text style={[ styles.title, { fontWeight: 'bold' }]}>
+                        {!isShowTerjemahan && !data.penjelasan && (
+                            <Text style={[styles.title, { fontWeight: 'bold' }]}>
                                 Lihat Terjemahan </Text>)}
-                        {isShowTerjemahan && (
-                            <Text style={[ styles.title, { fontWeight: 'bold' }]}>
+                        {isShowTerjemahan && !data.penjelasan && (
+                            <Text style={[styles.title, { fontWeight: 'bold' }]}>
                                 Tutup Terjemahan </Text>)}
                     </Text>
-                    {isShowTerjemahan && (
+                    {isShowTerjemahan && !data.penjelasan && (
                         <Text style={[styles.title_terjemah]}>"{data.terjemahan}"</Text>
                     )}
+                    {id == 1 && (<Text style={[styles.title_terjemah, {fontSize:14, marginTop:10}]}>* Untuk niat-niat shalat, lihat bagian jenis shalat</Text>)}
+            
                 </View>
-        </View>
-            </ScrollView >
+            </View>
+        </ScrollView >
 
         <View style={styles.buttonWrapper}>
             {data.id > 1 && (
@@ -74,7 +76,7 @@ export default function rukun() {
                 </TouchableOpacity>
             )}
 
-            {data.id < 9 && (
+            {data.id < 13 && (
                 <TouchableOpacity onPress={() => { navigation.navigate("[id]", { id: data.id + 1 }) }} style={styles.button}>
                     <Text style={[styles.textCenter, styles.buttonTitle]}>Next</Text>
                 </TouchableOpacity>
@@ -85,13 +87,14 @@ export default function rukun() {
 }
 
 const styles = StyleSheet.create({
-    center: { flex: 1,padding: 20, alignItems: 'center', justifyContent: 'center', width: '100%',  },
+    center: { flex: 1, padding: 20, alignItems: 'center', justifyContent: 'center', width: '100%', },
     bgOpening: {
         position: 'absolute',
         height: '120%',
         width: '120%',
         top: -100
     },
+    title_penjelasan : {fontSize: 20, fontWeight: 'regular', color: 'white', textAlign: 'justify', padding: 20},
     kartu: { backgroundColor: '#6345D4', padding: 20, borderRadius: 10, width: '100%', marginBottom: 20 },
     title: { color: 'white', fontSize: 14, },
     buttonWrapper: {
@@ -107,7 +110,7 @@ const styles = StyleSheet.create({
     button: { backgroundColor: '#6345D4', padding: 10, borderRadius: 10, width: '40%' },
     textCenter: { textAlign: 'center' },
     buttonTitle: { color: 'white', fontSize: 18, fontWeight: 'bold' },
-    title_doa: { fontSize: 30, fontWeight: 'bold', color: 'white', textAlign: 'right', padding: 20 },
+    title_doa: { fontSize: 24, fontWeight: 'bold', color: 'white', textAlign: 'right', padding: 20 },
     title_nama: { fontSize: 30, fontWeight: 'bold', color: 'white', textAlign: 'center', padding: 20, marginBottom: 40 },
-    title_terjemah :{ fontSize: 18, textAlign: 'justify', color: 'white',  fontFamily: 'poppins_regular' },
+    title_terjemah: { fontSize: 18, textAlign: 'justify', color: 'white', fontFamily: 'poppins_regular' },
 })  

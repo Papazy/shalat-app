@@ -8,6 +8,7 @@ import { Entypo } from '@expo/vector-icons';
 const index = () => {
 
     const navigation = useNavigation();
+
  
     const ukuran = 90;   
     return (

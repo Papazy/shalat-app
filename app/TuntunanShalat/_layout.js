@@ -14,6 +14,7 @@ export default function Layout(){
             <Stack.Screen name="PraktekShalat" />
             <Stack.Screen name="Catatan" /> 
             <Stack.Screen name="About" /> 
+            <Stack.Screen name="Jadwal" options={{headerShown:false}}/> 
         </Stack >
     )
 }
