@@ -31,8 +31,8 @@ const audioPaths = [
     require("../../../assets/audio/kosong/takbirTahiyat.m4a"), // 17
     "", // !!! duduk tasyahud Awal 18
     "", // !!! duduk tasyahud Akhir 19
-    require("../../../assets/audio/kosong/tahiyat.m4a"),// 20
-    require("../../../assets/audio/shalawat.m4a"), // 21
+    require("../../../assets/audio/kosong/tahiyat.wav"),// 20
+    require("../../../assets/audio/kosong/shalawat.wav"), // 21
     require("../../../assets/audio/kosong/salam.m4a"), // 22
 ];
 const videoPaths = [
@@ -229,7 +229,7 @@ export default function praktek() {
         />
         <ScrollView>
 
-            <View style={[styles.center,{position:'relative', top:-40}]}>
+            <View style={[styles.center,{position:'relative', top:-40, backgroundColor:'#EDECED'}]}>
 
 
                 {isPreloading &&
@@ -334,7 +334,7 @@ export default function praktek() {
 }
 
 const styles = StyleSheet.create({
-    center: { flex: 5, alignItems: 'center', justifyContent: 'center', width: '100%', backgroundColor: 'white' },
+    center: { flex: 5, alignItems: 'center', justifyContent: 'center', width: '100%' },
     kartu: {
         justifyContent: 'flex-start',
         backgroundColor: '#1e2f97',

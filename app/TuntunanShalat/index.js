@@ -3,6 +3,7 @@ import { Text, Image, View, SafeAreaView, StyleSheet, ImageBackground } from "re
 import { TouchableOpacity } from "react-native";
 import { useNavigation, Stack } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
 const index = () => {
@@ -21,9 +22,16 @@ const index = () => {
                         </TouchableOpacity>
                         ),
                     headerRight: () => (
-                        <TouchableOpacity onPress={() => navigation.navigate('About')} style={{paddingRight:8, paddingTop:5}}>
-                            <Entypo name="info-with-circle" size={38} color="white" />
+                        <>
+                        <TouchableOpacity onPress={() => navigation.navigate('Jadwal')} style={{paddingRight:8, paddingTop:5}}>
+                            
+                            <MaterialIcons name="schedule" size={40} color="white" />
                         </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('About')} style={{paddingRight:8, paddingTop:5}}>
+                            
+                            <Entypo name="info-with-circle" size={36} color="white" />
+                        </TouchableOpacity>
+                        </>
                     ),
                     headerTransparent: true,
                     headerTitle:''
